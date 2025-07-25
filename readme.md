@@ -8,4 +8,5 @@ Second, you must configure your "compose" key. Note that some Windows Managers, 
 setxkbmap -option compose:rctrl
 ```
 Third, rename file for "~/.XCompose" and restart Xorg WM (reboot or relogin) and then press the chosen compose key + C (for cuneiform) + name. Example "lugal (𒈗)":
-`R-Ctrl + c + lugal` or Emacs-lovers `RC-c-lugal`
+`R-Ctrl + c + lugal` or Emacs-lovers `RC c-lugal`
+- (note that I left space in Emacs, because in fact, the compose key only needs to be pressed and released, not held down)
