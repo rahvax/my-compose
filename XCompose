@@ -1,8 +1,8 @@
 include "%L"
 
 # Palavras
-<Multi_key> <c> <e> <m> <e> <g> <i> <r> : "𒅴  𒂠 " # EMEGIR
-<Multi_key> <c> <k> <e> <n> <g> <i> <r> : "𒆠 𒂗 𒄀  " # KENGIR
+<Multi_key> <c> <e> <m> <e> <g> <i> <r> : "𒅴𒂠" # EMEGIR
+<Multi_key> <c> <k> <e> <n> <g> <i> <r> : "𒆠𒂗𒄀" # KENGIR
 
 # Cuneiformes
 <Multi_key> <c> <a> : "𒀀"   # CUNEIFORM SIGN A
