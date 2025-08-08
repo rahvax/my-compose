@@ -1,0 +1,1266 @@
+#+title: Xorg11 Compose
+#+property: header-args:shell :tangle ~/.XCompose
+* Explicação 
+Aqui você pode definir pelo Emacs diretamente o Xorg-Compose. Basta utilizar C-c C-v t e será atualizado. Caso não atualiza na primeira, feche e abra novamente.
+* Cuneiformes Unicode
+Esses são os unicodes com os nomes dos sinais. Mas não representam o valor fonético. 
+#+BEGIN_SRC shell
+include "%L"
+
+<Multi_key> <c> <a> : "𒀀"   # CUNEIFORM SIGN A
+<Multi_key> <c> <a> <t> <i> <m> <e> <s> <a> : "𒀁"   # CUNEIFORM SIGN A TIMES A
+<Multi_key> <c> <a> <t> <i> <m> <e> <s> <b> <a> <d> : "𒀂"   # CUNEIFORM SIGN A TIMES BAD
+<Multi_key> <c> <a> <t> <i> <m> <e> <s> <g> <a> <n> <2> <t> <e> <n> <u> : "𒀃"   # CUNEIFORM SIGN A TIMES GAN2 TENU
+<Multi_key> <c> <a> <t> <i> <m> <e> <s> <h> <a> : "𒀄"   # CUNEIFORM SIGN A TIMES HA
+<Multi_key> <c> <a> <t> <i> <m> <e> <s> <i> <g> <i> : "𒀅"   # CUNEIFORM SIGN A TIMES IGI
+<Multi_key> <c> <a> <t> <i> <m> <e> <s> <l> <a> <g> <a> <r> <g> <u> <n> <u> : "𒀆"   # CUNEIFORM SIGN A TIMES LAGAR GUNU
+<Multi_key> <c> <a> <t> <i> <m> <e> <s> <m> <u> <s> <h> : "𒀇"   # CUNEIFORM SIGN A TIMES MUSH
+<Multi_key> <c> <a> <t> <i> <m> <e> <s> <s> <a> <g> : "𒀈"   # CUNEIFORM SIGN A TIMES SAG
+<Multi_key> <c> <a> <2> : "𒀉"   # CUNEIFORM SIGN A2
+<Multi_key> <c> <a> <b> : "𒀊"   # CUNEIFORM SIGN AB
+<Multi_key> <c> <a> <b> <t> <i> <m> <e> <s> <a> <s> <h> <2> : "𒀋"   # CUNEIFORM SIGN AB TIMES ASH2
+<Multi_key> <c> <a> <b> <t> <i> <m> <e> <s> <d> <u> <n> <3> <g> <u> <n> <u> : "𒀌"   # CUNEIFORM SIGN AB TIMES DUN3 GUNU
+<Multi_key> <c> <a> <b> <t> <i> <m> <e> <s> <g> <a> <l> : "𒀍"   # CUNEIFORM SIGN AB TIMES GAL
+<Multi_key> <c> <a> <b> <t> <i> <m> <e> <s> <g> <a> <n> <2> <t> <e> <n> <u> : "𒀎"   # CUNEIFORM SIGN AB TIMES GAN2 TENU
+<Multi_key> <c> <a> <b> <t> <i> <m> <e> <s> <h> <a> : "𒀏"   # CUNEIFORM SIGN AB TIMES HA
+<Multi_key> <c> <a> <b> <t> <i> <m> <e> <s> <i> <g> <i> <g> <u> <n> <u> : "𒀐"   # CUNEIFORM SIGN AB TIMES IGI GUNU
+<Multi_key> <c> <a> <b> <t> <i> <m> <e> <s> <i> <m> <i> <n> : "𒀑"   # CUNEIFORM SIGN AB TIMES IMIN
+<Multi_key> <c> <a> <b> <t> <i> <m> <e> <s> <l> <a> <g> <a> <b> : "𒀒"   # CUNEIFORM SIGN AB TIMES LAGAB
+<Multi_key> <c> <a> <b> <t> <i> <m> <e> <s> <s> <h> <e> <s> <h> : "𒀓"   # CUNEIFORM SIGN AB TIMES SHESH
+<Multi_key> <c> <a> <b> <t> <i> <m> <e> <s> <u> <p> <l> <u> <s> <u> <p> <l> <u> <s> <u> : "𒀔"   # CUNEIFORM SIGN AB TIMES U PLUS U PLUS U
+<Multi_key> <c> <a> <b> <g> <u> <n> <u> : "𒀕"   # CUNEIFORM SIGN AB GUNU
+<Multi_key> <c> <a> <b> <2> : "𒀖"   # CUNEIFORM SIGN AB2
+<Multi_key> <c> <a> <b> <2> <t> <i> <m> <e> <s> <b> <a> <l> <a> <g> : "𒀗"   # CUNEIFORM SIGN AB2 TIMES BALAG
+<Multi_key> <c> <a> <b> <2> <t> <i> <m> <e> <s> <g> <a> <n> <2> <t> <e> <n> <u> : "𒀘"   # CUNEIFORM SIGN AB2 TIMES GAN2 TENU
+<Multi_key> <c> <a> <b> <2> <t> <i> <m> <e> <s> <m> <e> <p> <l> <u> <s> <e> <n> : "𒀙"   # CUNEIFORM SIGN AB2 TIMES ME PLUS EN
+<Multi_key> <c> <a> <b> <2> <t> <i> <m> <e> <s> <s> <h> <a> <3> : "𒀚"   # CUNEIFORM SIGN AB2 TIMES SHA3
+<Multi_key> <c> <a> <b> <2> <t> <i> <m> <e> <s> <t> <a> <k> <4> : "𒀛"   # CUNEIFORM SIGN AB2 TIMES TAK4
+<Multi_key> <c> <a> <d> : "𒀜"   # CUNEIFORM SIGN AD
+<Multi_key> <c> <a> <k> : "𒀝"   # CUNEIFORM SIGN AK
+<Multi_key> <c> <a> <k> <t> <i> <m> <e> <s> <e> <r> <i> <n> <2> : "𒀞"   # CUNEIFORM SIGN AK TIMES ERIN2
+<Multi_key> <c> <a> <k> <t> <i> <m> <e> <s> <s> <h> <i> <t> <a> <p> <l> <u> <s> <g> <i> <s> <h> : "𒀟"   # CUNEIFORM SIGN AK TIMES SHITA PLUS GISH
+<Multi_key> <c> <a> <l> : "𒀠"   # CUNEIFORM SIGN AL
+<Multi_key> <c> <a> <l> <t> <i> <m> <e> <s> <a> <l> : "𒀡"   # CUNEIFORM SIGN AL TIMES AL
+<Multi_key> <c> <a> <l> <t> <i> <m> <e> <s> <d> <i> <m> <2> : "𒀢"   # CUNEIFORM SIGN AL TIMES DIM2
+<Multi_key> <c> <a> <l> <t> <i> <m> <e> <s> <g> <i> <s> <h> : "𒀣"   # CUNEIFORM SIGN AL TIMES GISH
+<Multi_key> <c> <a> <l> <t> <i> <m> <e> <s> <h> <a> : "𒀤"   # CUNEIFORM SIGN AL TIMES HA
+<Multi_key> <c> <a> <l> <t> <i> <m> <e> <s> <k> <a> <d> <3> : "𒀥"   # CUNEIFORM SIGN AL TIMES KAD3
+<Multi_key> <c> <a> <l> <t> <i> <m> <e> <s> <k> <i> : "𒀦"   # CUNEIFORM SIGN AL TIMES KI
+<Multi_key> <c> <a> <l> <t> <i> <m> <e> <s> <s> <h> <e> : "𒀧"   # CUNEIFORM SIGN AL TIMES SHE
+<Multi_key> <c> <a> <l> <t> <i> <m> <e> <s> <u> <s> <h> : "𒀨"   # CUNEIFORM SIGN AL TIMES USH
+<Multi_key> <c> <a> <l> <a> <n> : "𒀩"   # CUNEIFORM SIGN ALAN
+<Multi_key> <c> <a> <l> <e> <p> <h> : "𒀪"   # CUNEIFORM SIGN ALEPH
+<Multi_key> <c> <a> <m> <a> <r> : "𒀫"   # CUNEIFORM SIGN AMAR
+<Multi_key> <c> <a> <m> <a> <r> <t> <i> <m> <e> <s> <s> <h> <e> : "𒀬"   # CUNEIFORM SIGN AMAR TIMES SHE
+<Multi_key> <c> <a> <n> : "𒀭"   # CUNEIFORM SIGN AN
+<Multi_key> <c> <a> <n> <o> <v> <e> <r> <a> <n> : "𒀮"   # CUNEIFORM SIGN AN OVER AN
+<Multi_key> <c> <a> <n> <t> <h> <r> <e> <e> <t> <i> <m> <e> <s> : "𒀯"   # CUNEIFORM SIGN AN THREE TIMES
+<Multi_key> <c> <a> <n> <p> <l> <u> <s> <n> <a> <g> <a> <o> <p> <p> <o> <s> <i> <n> <g> <a> <n> <p> <l> <u> <s> <n> <a> <g> <a> : "𒀰"   # CUNEIFORM SIGN AN PLUS NAGA OPPOSING AN PLUS NAGA
+<Multi_key> <c> <a> <n> <p> <l> <u> <s> <n> <a> <g> <a> <s> <q> <u> <a> <r> <e> <d> : "𒀱"   # CUNEIFORM SIGN AN PLUS NAGA SQUARED
+<Multi_key> <c> <a> <n> <s> <h> <e> : "𒀲"   # CUNEIFORM SIGN ANSHE
+<Multi_key> <c> <a> <p> <i> <n> : "𒀳"   # CUNEIFORM SIGN APIN
+<Multi_key> <c> <a> <r> <a> <d> : "𒀴"   # CUNEIFORM SIGN ARAD
+<Multi_key> <c> <a> <r> <a> <d> <t> <i> <m> <e> <s> <k> <u> <r> : "𒀵"   # CUNEIFORM SIGN ARAD TIMES KUR
+<Multi_key> <c> <a> <r> <k> <a> <b> : "𒀶"   # CUNEIFORM SIGN ARKAB
+<Multi_key> <c> <a> <s> <a> <l> <2> : "𒀷"   # CUNEIFORM SIGN ASAL2
+<Multi_key> <c> <a> <s> <h> : "𒀸"   # CUNEIFORM SIGN ASH
+<Multi_key> <c> <a> <s> <h> <z> <i> <d> <a> <t> <e> <n> <u> : "𒀹"   # CUNEIFORM SIGN ASH ZIDA TENU
+<Multi_key> <c> <a> <s> <h> <k> <a> <b> <a> <t> <e> <n> <u> : "𒀺"   # CUNEIFORM SIGN ASH KABA TENU
+<Multi_key> <c> <a> <s> <h> <o> <v> <e> <r> <a> <s> <h> <t> <u> <g> <2> <o> <v> <e> <r> <t> <u> <g> <2> <t> <u> <g> <2> <o> <v> <e> <r> <t> <u> <g> <2> <p> <a> <p> : "𒀻"   # CUNEIFORM SIGN ASH OVER ASH TUG2 OVER TUG2 TUG2 OVER TUG2 PAP
+<Multi_key> <c> <a> <s> <h> <o> <v> <e> <r> <a> <s> <h> <o> <v> <e> <r> <a> <s> <h> : "𒀼"   # CUNEIFORM SIGN ASH OVER ASH OVER ASH
+<Multi_key> <c> <a> <s> <h> <o> <v> <e> <r> <a> <s> <h> <o> <v> <e> <r> <a> <s> <h> <c> <r> <o> <s> <s> <i> <n> <g> <a> <s> <h> <o> <v> <e> <r> <a> <s> <h> <o> <v> <e> <r> <a> <s> <h> : "𒀽"   # CUNEIFORM SIGN ASH OVER ASH OVER ASH CROSSING ASH OVER ASH OVER ASH
+<Multi_key> <c> <a> <s> <h> <2> : "𒀾"   # CUNEIFORM SIGN ASH2
+<Multi_key> <c> <a> <s> <h> <g> <a> <b> : "𒀿"   # CUNEIFORM SIGN ASHGAB
+<Multi_key> <c> <b> <a> : "𒁀"   # CUNEIFORM SIGN BA
+<Multi_key> <c> <b> <a> <d> : "𒁁"   # CUNEIFORM SIGN BAD
+<Multi_key> <c> <b> <a> <g> <3> : "𒁂"   # CUNEIFORM SIGN BAG3
+<Multi_key> <c> <b> <a> <h> <a> <r> <2> : "𒁃"   # CUNEIFORM SIGN BAHAR2
+<Multi_key> <c> <b> <a> <l> : "𒁄"   # CUNEIFORM SIGN BAL
+<Multi_key> <c> <b> <a> <l> <o> <v> <e> <r> <b> <a> <l> : "𒁅"   # CUNEIFORM SIGN BAL OVER BAL
+<Multi_key> <c> <b> <a> <l> <a> <g> : "𒁆"   # CUNEIFORM SIGN BALAG
+<Multi_key> <c> <b> <a> <r> : "𒁇"   # CUNEIFORM SIGN BAR
+<Multi_key> <c> <b> <a> <r> <a> <2> : "𒁈"   # CUNEIFORM SIGN BARA2
+<Multi_key> <c> <b> <i> : "𒁉"   # CUNEIFORM SIGN BI
+<Multi_key> <c> <b> <i> <t> <i> <m> <e> <s> <a> : "𒁊"   # CUNEIFORM SIGN BI TIMES A
+<Multi_key> <c> <b> <i> <t> <i> <m> <e> <s> <g> <a> <r> : "𒁋"   # CUNEIFORM SIGN BI TIMES GAR
+<Multi_key> <c> <b> <i> <t> <i> <m> <e> <s> <i> <g> <i> <g> <u> <n> <u> : "𒁌"   # CUNEIFORM SIGN BI TIMES IGI GUNU
+<Multi_key> <c> <b> <u> : "𒁍"   # CUNEIFORM SIGN BU
+<Multi_key> <c> <b> <u> <o> <v> <e> <r> <b> <u> <a> <b> : "𒁎"   # CUNEIFORM SIGN BU OVER BU AB
+<Multi_key> <c> <b> <u> <o> <v> <e> <r> <b> <u> <u> <n> : "𒁏"   # CUNEIFORM SIGN BU OVER BU UN
+<Multi_key> <c> <b> <u> <c> <r> <o> <s> <s> <i> <n> <g> <b> <u> : "𒁐"   # CUNEIFORM SIGN BU CROSSING BU
+<Multi_key> <c> <b> <u> <l> <u> <g> : "𒁑"   # CUNEIFORM SIGN BULUG
+<Multi_key> <c> <b> <u> <l> <u> <g> <o> <v> <e> <r> <b> <u> <l> <u> <g> : "𒁒"   # CUNEIFORM SIGN BULUG OVER BULUG
+<Multi_key> <c> <b> <u> <r> : "𒁓"   # CUNEIFORM SIGN BUR
+<Multi_key> <c> <b> <u> <r> <2> : "𒁔"   # CUNEIFORM SIGN BUR2
+<Multi_key> <c> <d> <a> : "𒁕"   # CUNEIFORM SIGN DA
+<Multi_key> <c> <d> <a> <g> : "𒁖"   # CUNEIFORM SIGN DAG
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <m> <a> <s> <h> : "𒁗"   # CUNEIFORM SIGN DAG KISIM5 TIMES A PLUS MASH
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <a> <m> <a> <r> : "𒁘"   # CUNEIFORM SIGN DAG KISIM5 TIMES AMAR
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <b> <a> <l> <a> <g> : "𒁙"   # CUNEIFORM SIGN DAG KISIM5 TIMES BALAG
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <b> <i> : "𒁚"   # CUNEIFORM SIGN DAG KISIM5 TIMES BI
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <g> <a> : "𒁛"   # CUNEIFORM SIGN DAG KISIM5 TIMES GA
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <g> <a> <p> <l> <u> <s> <m> <a> <s> <h> : "𒁜"   # CUNEIFORM SIGN DAG KISIM5 TIMES GA PLUS MASH
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <g> <i> : "𒁝"   # CUNEIFORM SIGN DAG KISIM5 TIMES GI
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <g> <i> <r> <2> : "𒁞"   # CUNEIFORM SIGN DAG KISIM5 TIMES GIR2
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <g> <u> <d> : "𒁟"   # CUNEIFORM SIGN DAG KISIM5 TIMES GUD
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <h> <a> : "𒁠"   # CUNEIFORM SIGN DAG KISIM5 TIMES HA
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <i> <r> : "𒁡"   # CUNEIFORM SIGN DAG KISIM5 TIMES IR
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <i> <r> <p> <l> <u> <s> <l> <u> : "𒁢"   # CUNEIFORM SIGN DAG KISIM5 TIMES IR PLUS LU
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <k> <a> <k> : "𒁣"   # CUNEIFORM SIGN DAG KISIM5 TIMES KAK
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <l> <a> : "𒁤"   # CUNEIFORM SIGN DAG KISIM5 TIMES LA
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <l> <u> : "𒁥"   # CUNEIFORM SIGN DAG KISIM5 TIMES LU
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <l> <u> <p> <l> <u> <s> <m> <a> <s> <h> <2> : "𒁦"   # CUNEIFORM SIGN DAG KISIM5 TIMES LU PLUS MASH2
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <l> <u> <m> : "𒁧"   # CUNEIFORM SIGN DAG KISIM5 TIMES LUM
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <n> <e> : "𒁨"   # CUNEIFORM SIGN DAG KISIM5 TIMES NE
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <p> <a> <p> <p> <l> <u> <s> <p> <a> <p> : "𒁩"   # CUNEIFORM SIGN DAG KISIM5 TIMES PAP PLUS PAP
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <s> <i> : "𒁪"   # CUNEIFORM SIGN DAG KISIM5 TIMES SI
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <t> <a> <k> <4> : "𒁫"   # CUNEIFORM SIGN DAG KISIM5 TIMES TAK4
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <u> <2> <p> <l> <u> <s> <g> <i> <r> <2> : "𒁬"   # CUNEIFORM SIGN DAG KISIM5 TIMES U2 PLUS GIR2
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <u> <s> <h> : "𒁭"   # CUNEIFORM SIGN DAG KISIM5 TIMES USH
+<Multi_key> <c> <d> <a> <m> : "𒁮"   # CUNEIFORM SIGN DAM
+<Multi_key> <c> <d> <a> <r> : "𒁯"   # CUNEIFORM SIGN DAR
+<Multi_key> <c> <d> <a> <r> <a> <3> : "𒁰"   # CUNEIFORM SIGN DARA3
+<Multi_key> <c> <d> <a> <r> <a> <4> : "𒁱"   # CUNEIFORM SIGN DARA4
+<Multi_key> <c> <d> <i> : "𒁲"   # CUNEIFORM SIGN DI
+<Multi_key> <c> <d> <i> <b> : "𒁳"   # CUNEIFORM SIGN DIB
+<Multi_key> <c> <d> <i> <m> : "𒁴"   # CUNEIFORM SIGN DIM
+<Multi_key> <c> <d> <i> <m> <t> <i> <m> <e> <s> <s> <h> <e> : "𒁵"   # CUNEIFORM SIGN DIM TIMES SHE
+<Multi_key> <c> <d> <i> <m> <2> : "𒁶"   # CUNEIFORM SIGN DIM2
+<Multi_key> <c> <d> <i> <n> : "𒁷"   # CUNEIFORM SIGN DIN
+<Multi_key> <c> <d> <i> <n> <k> <a> <s> <k> <a> <l> <u> <g> <u> <n> <u> <d> <i> <s> <h> : "𒁸"   # CUNEIFORM SIGN DIN KASKAL U GUNU DISH
+<Multi_key> <c> <d> <i> <s> <h> : "𒁹"   # CUNEIFORM SIGN DISH
+<Multi_key> <c> <d> <u> : "𒁺"   # CUNEIFORM SIGN DU
+<Multi_key> <c> <d> <u> <o> <v> <e> <r> <d> <u> : "𒁻"   # CUNEIFORM SIGN DU OVER DU
+<Multi_key> <c> <d> <u> <g> <u> <n> <u> : "𒁼"   # CUNEIFORM SIGN DU GUNU
+<Multi_key> <c> <d> <u> <s> <h> <e> <s> <h> <i> <g> : "𒁽"   # CUNEIFORM SIGN DU SHESHIG
+<Multi_key> <c> <d> <u> <b> : "𒁾"   # CUNEIFORM SIGN DUB
+<Multi_key> <c> <d> <u> <b> <t> <i> <m> <e> <s> <e> <s> <h> <2> : "𒁿"   # CUNEIFORM SIGN DUB TIMES ESH2
+<Multi_key> <c> <d> <u> <b> <2> : "𒂀"   # CUNEIFORM SIGN DUB2
+<Multi_key> <c> <d> <u> <g> : "𒂁"   # CUNEIFORM SIGN DUG
+<Multi_key> <c> <d> <u> <g> <u> <d> : "𒂂"   # CUNEIFORM SIGN DUGUD
+<Multi_key> <c> <d> <u> <h> : "𒂃"   # CUNEIFORM SIGN DUH
+<Multi_key> <c> <d> <u> <n> : "𒂄"   # CUNEIFORM SIGN DUN
+<Multi_key> <c> <d> <u> <n> <3> : "𒂅"   # CUNEIFORM SIGN DUN3
+<Multi_key> <c> <d> <u> <n> <3> <g> <u> <n> <u> : "𒂆"   # CUNEIFORM SIGN DUN3 GUNU
+<Multi_key> <c> <d> <u> <n> <3> <g> <u> <n> <u> <g> <u> <n> <u> : "𒂇"   # CUNEIFORM SIGN DUN3 GUNU GUNU
+<Multi_key> <c> <d> <u> <n> <4> : "𒂈"   # CUNEIFORM SIGN DUN4
+<Multi_key> <c> <d> <u> <r> <2> : "𒂉"   # CUNEIFORM SIGN DUR2
+<Multi_key> <c> <e> : "𒂊"   # CUNEIFORM SIGN E
+<Multi_key> <c> <e> <t> <i> <m> <e> <s> <p> <a> <p> : "𒂋"   # CUNEIFORM SIGN E TIMES PAP
+<Multi_key> <c> <e> <o> <v> <e> <r> <e> <n> <u> <n> <o> <v> <e> <r> <n> <u> <n> : "𒂌"   # CUNEIFORM SIGN E OVER E NUN OVER NUN
+<Multi_key> <c> <e> <2> : "𒂍"   # CUNEIFORM SIGN E2
+<Multi_key> <c> <e> <2> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <h> <a> <p> <l> <u> <s> <d> <a> : "𒂎"   # CUNEIFORM SIGN E2 TIMES A PLUS HA PLUS DA
+<Multi_key> <c> <e> <2> <t> <i> <m> <e> <s> <g> <a> <r> : "𒂏"   # CUNEIFORM SIGN E2 TIMES GAR
+<Multi_key> <c> <e> <2> <t> <i> <m> <e> <s> <m> <i> : "𒂐"   # CUNEIFORM SIGN E2 TIMES MI
+<Multi_key> <c> <e> <2> <t> <i> <m> <e> <s> <s> <a> <l> : "𒂑"   # CUNEIFORM SIGN E2 TIMES SAL
+<Multi_key> <c> <e> <2> <t> <i> <m> <e> <s> <s> <h> <e> : "𒂒"   # CUNEIFORM SIGN E2 TIMES SHE
+<Multi_key> <c> <e> <2> <t> <i> <m> <e> <s> <u> : "𒂓"   # CUNEIFORM SIGN E2 TIMES U
+<Multi_key> <c> <e> <d> <i> <n> : "𒂔"   # CUNEIFORM SIGN EDIN
+<Multi_key> <c> <e> <g> <i> <r> : "𒂕"   # CUNEIFORM SIGN EGIR
+<Multi_key> <c> <e> <l> : "𒂖"   # CUNEIFORM SIGN EL
+<Multi_key> <c> <e> <n> : "𒂗"   # CUNEIFORM SIGN EN
+<Multi_key> <c> <e> <n> <t> <i> <m> <e> <s> <g> <a> <n> <2> : "𒂘"   # CUNEIFORM SIGN EN TIMES GAN2
+<Multi_key> <c> <e> <n> <t> <i> <m> <e> <s> <g> <a> <n> <2> <t> <e> <n> <u> : "𒂙"   # CUNEIFORM SIGN EN TIMES GAN2 TENU
+<Multi_key> <c> <e> <n> <t> <i> <m> <e> <s> <m> <e> : "𒂚"   # CUNEIFORM SIGN EN TIMES ME
+<Multi_key> <c> <e> <n> <c> <r> <o> <s> <s> <i> <n> <g> <e> <n> : "𒂛"   # CUNEIFORM SIGN EN CROSSING EN
+<Multi_key> <c> <e> <n> <o> <p> <p> <o> <s> <i> <n> <g> <e> <n> : "𒂜"   # CUNEIFORM SIGN EN OPPOSING EN
+<Multi_key> <c> <e> <n> <s> <q> <u> <a> <r> <e> <d> : "𒂝"   # CUNEIFORM SIGN EN SQUARED
+<Multi_key> <c> <e> <r> <e> <n> : "𒂞"   # CUNEIFORM SIGN EREN
+<Multi_key> <c> <e> <r> <i> <n> <2> : "𒂟"   # CUNEIFORM SIGN ERIN2
+<Multi_key> <c> <e> <s> <h> <2> : "𒂠"   # CUNEIFORM SIGN ESH2
+<Multi_key> <c> <e> <z> <e> <n> : "𒂡"   # CUNEIFORM SIGN EZEN
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <a> : "𒂢"   # CUNEIFORM SIGN EZEN TIMES A
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <l> <a> <l> : "𒂣"   # CUNEIFORM SIGN EZEN TIMES A PLUS LAL
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <l> <a> <l> <t> <i> <m> <e> <s> <l> <a> <l> : "𒂤"   # CUNEIFORM SIGN EZEN TIMES A PLUS LAL TIMES LAL
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <a> <n> : "𒂥"   # CUNEIFORM SIGN EZEN TIMES AN
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <b> <a> <d> : "𒂦"   # CUNEIFORM SIGN EZEN TIMES BAD
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <d> <u> <n> <3> <g> <u> <n> <u> : "𒂧"   # CUNEIFORM SIGN EZEN TIMES DUN3 GUNU
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <d> <u> <n> <3> <g> <u> <n> <u> <g> <u> <n> <u> : "𒂨"   # CUNEIFORM SIGN EZEN TIMES DUN3 GUNU GUNU
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <h> <a> : "𒂩"   # CUNEIFORM SIGN EZEN TIMES HA
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <h> <a> <g> <u> <n> <u> : "𒂪"   # CUNEIFORM SIGN EZEN TIMES HA GUNU
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <i> <g> <i> <g> <u> <n> <u> : "𒂫"   # CUNEIFORM SIGN EZEN TIMES IGI GUNU
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <k> <a> <s> <k> <a> <l> : "𒂬"   # CUNEIFORM SIGN EZEN TIMES KASKAL
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <k> <a> <s> <k> <a> <l> <s> <q> <u> <a> <r> <e> <d> : "𒂭"   # CUNEIFORM SIGN EZEN TIMES KASKAL SQUARED
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <k> <u> <3> : "𒂮"   # CUNEIFORM SIGN EZEN TIMES KU3
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <l> <a> : "𒂯"   # CUNEIFORM SIGN EZEN TIMES LA
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <l> <a> <l> <t> <i> <m> <e> <s> <l> <a> <l> : "𒂰"   # CUNEIFORM SIGN EZEN TIMES LAL TIMES LAL
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <l> <i> : "𒂱"   # CUNEIFORM SIGN EZEN TIMES LI
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <l> <u> : "𒂲"   # CUNEIFORM SIGN EZEN TIMES LU
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <u> <2> : "𒂳"   # CUNEIFORM SIGN EZEN TIMES U2
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <u> <d> : "𒂴"   # CUNEIFORM SIGN EZEN TIMES UD
+<Multi_key> <c> <g> <a> : "𒂵"   # CUNEIFORM SIGN GA
+<Multi_key> <c> <g> <a> <g> <u> <n> <u> : "𒂶"   # CUNEIFORM SIGN GA GUNU
+<Multi_key> <c> <g> <a> <2> : "𒂷"   # CUNEIFORM SIGN GA2
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <d> <a> <p> <l> <u> <s> <h> <a> : "𒂸"   # CUNEIFORM SIGN GA2 TIMES A PLUS DA PLUS HA
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <h> <a> : "𒂹"   # CUNEIFORM SIGN GA2 TIMES A PLUS HA
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <i> <g> <i> : "𒂺"   # CUNEIFORM SIGN GA2 TIMES A PLUS IGI
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <a> <b> <2> <t> <e> <n> <u> <p> <l> <u> <s> <t> <a> <b> : "𒂻"   # CUNEIFORM SIGN GA2 TIMES AB2 TENU PLUS TAB
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <a> <n> : "𒂼"   # CUNEIFORM SIGN GA2 TIMES AN
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <a> <s> <h> : "𒂽"   # CUNEIFORM SIGN GA2 TIMES ASH
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <a> <s> <h> <2> <p> <l> <u> <s> <g> <a> <l> : "𒂾"   # CUNEIFORM SIGN GA2 TIMES ASH2 PLUS GAL
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <b> <a> <d> : "𒂿"   # CUNEIFORM SIGN GA2 TIMES BAD
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <b> <a> <r> <p> <l> <u> <s> <r> <a> : "𒃀"   # CUNEIFORM SIGN GA2 TIMES BAR PLUS RA
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <b> <u> <r> : "𒃁"   # CUNEIFORM SIGN GA2 TIMES BUR
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <b> <u> <r> <p> <l> <u> <s> <r> <a> : "𒃂"   # CUNEIFORM SIGN GA2 TIMES BUR PLUS RA
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <d> <a> : "𒃃"   # CUNEIFORM SIGN GA2 TIMES DA
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <d> <i> : "𒃄"   # CUNEIFORM SIGN GA2 TIMES DI
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <d> <i> <m> <t> <i> <m> <e> <s> <s> <h> <e> : "𒃅"   # CUNEIFORM SIGN GA2 TIMES DIM TIMES SHE
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <d> <u> <b> : "𒃆"   # CUNEIFORM SIGN GA2 TIMES DUB
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <e> <l> : "𒃇"   # CUNEIFORM SIGN GA2 TIMES EL
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <e> <l> <p> <l> <u> <s> <l> <a> : "𒃈"   # CUNEIFORM SIGN GA2 TIMES EL PLUS LA
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <e> <n> : "𒃉"   # CUNEIFORM SIGN GA2 TIMES EN
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <e> <n> <t> <i> <m> <e> <s> <g> <a> <n> <2> <t> <e> <n> <u> : "𒃊"   # CUNEIFORM SIGN GA2 TIMES EN TIMES GAN2 TENU
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <g> <a> <n> <2> <t> <e> <n> <u> : "𒃋"   # CUNEIFORM SIGN GA2 TIMES GAN2 TENU
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <g> <a> <r> : "𒃌"   # CUNEIFORM SIGN GA2 TIMES GAR
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <g> <i> : "𒃍"   # CUNEIFORM SIGN GA2 TIMES GI
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <g> <i> <4> : "𒃎"   # CUNEIFORM SIGN GA2 TIMES GI4
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <g> <i> <4> <p> <l> <u> <s> <a> : "𒃏"   # CUNEIFORM SIGN GA2 TIMES GI4 PLUS A
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <g> <i> <r> <2> <p> <l> <u> <s> <s> <u> : "𒃐"   # CUNEIFORM SIGN GA2 TIMES GIR2 PLUS SU
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <h> <a> <p> <l> <u> <s> <l> <u> <p> <l> <u> <s> <e> <s> <h> <2> : "𒃑"   # CUNEIFORM SIGN GA2 TIMES HA PLUS LU PLUS ESH2
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <h> <a> <l> : "𒃒"   # CUNEIFORM SIGN GA2 TIMES HAL
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <h> <a> <l> <p> <l> <u> <s> <l> <a> : "𒃓"   # CUNEIFORM SIGN GA2 TIMES HAL PLUS LA
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <h> <i> <p> <l> <u> <s> <l> <i> : "𒃔"   # CUNEIFORM SIGN GA2 TIMES HI PLUS LI
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <h> <u> <b> <2> : "𒃕"   # CUNEIFORM SIGN GA2 TIMES HUB2
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <i> <g> <i> <g> <u> <n> <u> : "𒃖"   # CUNEIFORM SIGN GA2 TIMES IGI GUNU
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <i> <s> <h> <p> <l> <u> <s> <h> <u> <p> <l> <u> <s> <a> <s> <h> : "𒃗"   # CUNEIFORM SIGN GA2 TIMES ISH PLUS HU PLUS ASH
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <k> <a> <k> : "𒃘"   # CUNEIFORM SIGN GA2 TIMES KAK
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <k> <a> <s> <k> <a> <l> : "𒃙"   # CUNEIFORM SIGN GA2 TIMES KASKAL
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <k> <i> <d> : "𒃚"   # CUNEIFORM SIGN GA2 TIMES KID
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <k> <i> <d> <p> <l> <u> <s> <l> <a> <l> : "𒃛"   # CUNEIFORM SIGN GA2 TIMES KID PLUS LAL
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <k> <u> <3> <p> <l> <u> <s> <a> <n> : "𒃜"   # CUNEIFORM SIGN GA2 TIMES KU3 PLUS AN
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <l> <a> : "𒃝"   # CUNEIFORM SIGN GA2 TIMES LA
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <m> <e> <p> <l> <u> <s> <e> <n> : "𒃞"   # CUNEIFORM SIGN GA2 TIMES ME PLUS EN
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <m> <i> : "𒃟"   # CUNEIFORM SIGN GA2 TIMES MI
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <n> <u> <n> : "𒃠"   # CUNEIFORM SIGN GA2 TIMES NUN
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <n> <u> <n> <o> <v> <e> <r> <n> <u> <n> : "𒃡"   # CUNEIFORM SIGN GA2 TIMES NUN OVER NUN
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <p> <a> : "𒃢"   # CUNEIFORM SIGN GA2 TIMES PA
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <s> <a> <l> : "𒃣"   # CUNEIFORM SIGN GA2 TIMES SAL
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <s> <a> <r> : "𒃤"   # CUNEIFORM SIGN GA2 TIMES SAR
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <s> <h> <e> : "𒃥"   # CUNEIFORM SIGN GA2 TIMES SHE
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <s> <h> <e> <p> <l> <u> <s> <t> <u> <r> : "𒃦"   # CUNEIFORM SIGN GA2 TIMES SHE PLUS TUR
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <s> <h> <i> <d> : "𒃧"   # CUNEIFORM SIGN GA2 TIMES SHID
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <s> <u> <m> : "𒃨"   # CUNEIFORM SIGN GA2 TIMES SUM
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <t> <a> <k> <4> : "𒃩"   # CUNEIFORM SIGN GA2 TIMES TAK4
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <u> : "𒃪"   # CUNEIFORM SIGN GA2 TIMES U
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <u> <d> : "𒃫"   # CUNEIFORM SIGN GA2 TIMES UD
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <u> <d> <p> <l> <u> <s> <d> <u> : "𒃬"   # CUNEIFORM SIGN GA2 TIMES UD PLUS DU
+<Multi_key> <c> <g> <a> <2> <o> <v> <e> <r> <g> <a> <2> : "𒃭"   # CUNEIFORM SIGN GA2 OVER GA2
+<Multi_key> <c> <g> <a> <b> <a> : "𒃮"   # CUNEIFORM SIGN GABA
+<Multi_key> <c> <g> <a> <b> <a> <c> <r> <o> <s> <s> <i> <n> <g> <g> <a> <b> <a> : "𒃯"   # CUNEIFORM SIGN GABA CROSSING GABA
+<Multi_key> <c> <g> <a> <d> : "𒃰"   # CUNEIFORM SIGN GAD
+<Multi_key> <c> <g> <a> <d> <o> <v> <e> <r> <g> <a> <d> <g> <a> <r> <o> <v> <e> <r> <g> <a> <r> : "𒃱"   # CUNEIFORM SIGN GAD OVER GAD GAR OVER GAR
+<Multi_key> <c> <g> <a> <l> : "𒃲"   # CUNEIFORM SIGN GAL
+<Multi_key> <c> <g> <a> <l> <g> <a> <d> <o> <v> <e> <r> <g> <a> <d> <g> <a> <r> <o> <v> <e> <r> <g> <a> <r> : "𒃳"   # CUNEIFORM SIGN GAL GAD OVER GAD GAR OVER GAR
+<Multi_key> <c> <g> <a> <l> <a> <m> : "𒃴"   # CUNEIFORM SIGN GALAM
+<Multi_key> <c> <g> <a> <m> : "𒃵"   # CUNEIFORM SIGN GAM
+<Multi_key> <c> <g> <a> <n> : "𒃶"   # CUNEIFORM SIGN GAN
+<Multi_key> <c> <g> <a> <n> <2> : "𒃷"   # CUNEIFORM SIGN GAN2
+<Multi_key> <c> <g> <a> <n> <2> <t> <e> <n> <u> : "𒃸"   # CUNEIFORM SIGN GAN2 TENU
+<Multi_key> <c> <g> <a> <n> <2> <o> <v> <e> <r> <g> <a> <n> <2> : "𒃹"   # CUNEIFORM SIGN GAN2 OVER GAN2
+<Multi_key> <c> <g> <a> <n> <2> <c> <r> <o> <s> <s> <i> <n> <g> <g> <a> <n> <2> : "𒃺"   # CUNEIFORM SIGN GAN2 CROSSING GAN2
+<Multi_key> <c> <g> <a> <r> : "𒃻"   # CUNEIFORM SIGN GAR
+<Multi_key> <c> <g> <a> <r> <3> : "𒃼"   # CUNEIFORM SIGN GAR3
+<Multi_key> <c> <g> <a> <s> <h> <a> <n> : "𒃽"   # CUNEIFORM SIGN GASHAN
+<Multi_key> <c> <g> <e> <s> <h> <t> <i> <n> : "𒃾"   # CUNEIFORM SIGN GESHTIN
+<Multi_key> <c> <g> <e> <s> <h> <t> <i> <n> <t> <i> <m> <e> <s> <k> <u> <r> : "𒃿"   # CUNEIFORM SIGN GESHTIN TIMES KUR
+<Multi_key> <c> <g> <i> : "𒄀"   # CUNEIFORM SIGN GI
+<Multi_key> <c> <g> <i> <t> <i> <m> <e> <s> <e> : "𒄁"   # CUNEIFORM SIGN GI TIMES E
+<Multi_key> <c> <g> <i> <t> <i> <m> <e> <s> <u> : "𒄂"   # CUNEIFORM SIGN GI TIMES U
+<Multi_key> <c> <g> <i> <c> <r> <o> <s> <s> <i> <n> <g> <g> <i> : "𒄃"   # CUNEIFORM SIGN GI CROSSING GI
+<Multi_key> <c> <g> <i> <4> : "𒄄"   # CUNEIFORM SIGN GI4
+<Multi_key> <c> <g> <i> <4> <o> <v> <e> <r> <g> <i> <4> : "𒄅"   # CUNEIFORM SIGN GI4 OVER GI4
+<Multi_key> <c> <g> <i> <4> <c> <r> <o> <s> <s> <i> <n> <g> <g> <i> <4> : "𒄆"   # CUNEIFORM SIGN GI4 CROSSING GI4
+<Multi_key> <c> <g> <i> <d> <i> <m> : "𒄇"   # CUNEIFORM SIGN GIDIM
+<Multi_key> <c> <g> <i> <r> <2> : "𒄈"   # CUNEIFORM SIGN GIR2
+<Multi_key> <c> <g> <i> <r> <2> <g> <u> <n> <u> : "𒄉"   # CUNEIFORM SIGN GIR2 GUNU
+<Multi_key> <c> <g> <i> <r> <3> : "𒄊"   # CUNEIFORM SIGN GIR3
+<Multi_key> <c> <g> <i> <r> <3> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <i> <g> <i> : "𒄋"   # CUNEIFORM SIGN GIR3 TIMES A PLUS IGI
+<Multi_key> <c> <g> <i> <r> <3> <t> <i> <m> <e> <s> <g> <a> <n> <2> <t> <e> <n> <u> : "𒄌"   # CUNEIFORM SIGN GIR3 TIMES GAN2 TENU
+<Multi_key> <c> <g> <i> <r> <3> <t> <i> <m> <e> <s> <i> <g> <i> : "𒄍"   # CUNEIFORM SIGN GIR3 TIMES IGI
+<Multi_key> <c> <g> <i> <r> <3> <t> <i> <m> <e> <s> <l> <u> <p> <l> <u> <s> <i> <g> <i> : "𒄎"   # CUNEIFORM SIGN GIR3 TIMES LU PLUS IGI
+<Multi_key> <c> <g> <i> <r> <3> <t> <i> <m> <e> <s> <p> <a> : "𒄏"   # CUNEIFORM SIGN GIR3 TIMES PA
+<Multi_key> <c> <g> <i> <s> <a> <l> : "𒄐"   # CUNEIFORM SIGN GISAL
+<Multi_key> <c> <g> <i> <s> <h> : "𒄑"   # CUNEIFORM SIGN GISH
+<Multi_key> <c> <g> <i> <s> <h> <c> <r> <o> <s> <s> <i> <n> <g> <g> <i> <s> <h> : "𒄒"   # CUNEIFORM SIGN GISH CROSSING GISH
+<Multi_key> <c> <g> <i> <s> <h> <t> <i> <m> <e> <s> <b> <a> <d> : "𒄓"   # CUNEIFORM SIGN GISH TIMES BAD
+<Multi_key> <c> <g> <i> <s> <h> <t> <i> <m> <e> <s> <t> <a> <k> <4> : "𒄔"   # CUNEIFORM SIGN GISH TIMES TAK4
+<Multi_key> <c> <g> <i> <s> <h> <t> <e> <n> <u> : "𒄕"   # CUNEIFORM SIGN GISH TENU
+<Multi_key> <c> <g> <u> : "𒄖"   # CUNEIFORM SIGN GU
+<Multi_key> <c> <g> <u> <c> <r> <o> <s> <s> <i> <n> <g> <g> <u> : "𒄗"   # CUNEIFORM SIGN GU CROSSING GU
+<Multi_key> <c> <g> <u> <2> : "𒄘"   # CUNEIFORM SIGN GU2
+<Multi_key> <c> <g> <u> <2> <t> <i> <m> <e> <s> <k> <a> <k> : "𒄙"   # CUNEIFORM SIGN GU2 TIMES KAK
+<Multi_key> <c> <g> <u> <2> <t> <i> <m> <e> <s> <k> <a> <k> <t> <i> <m> <e> <s> <i> <g> <i> <g> <u> <n> <u> : "𒄚"   # CUNEIFORM SIGN GU2 TIMES KAK TIMES IGI GUNU
+<Multi_key> <c> <g> <u> <2> <t> <i> <m> <e> <s> <n> <u> <n> : "𒄛"   # CUNEIFORM SIGN GU2 TIMES NUN
+<Multi_key> <c> <g> <u> <2> <t> <i> <m> <e> <s> <s> <a> <l> <p> <l> <u> <s> <t> <u> <g> <2> : "𒄜"   # CUNEIFORM SIGN GU2 TIMES SAL PLUS TUG2
+<Multi_key> <c> <g> <u> <2> <g> <u> <n> <u> : "𒄝"   # CUNEIFORM SIGN GU2 GUNU
+<Multi_key> <c> <g> <u> <d> : "𒄞"   # CUNEIFORM SIGN GUD
+<Multi_key> <c> <g> <u> <d> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <k> <u> <r> : "𒄟"   # CUNEIFORM SIGN GUD TIMES A PLUS KUR
+<Multi_key> <c> <g> <u> <d> <t> <i> <m> <e> <s> <k> <u> <r> : "𒄠"   # CUNEIFORM SIGN GUD TIMES KUR
+<Multi_key> <c> <g> <u> <d> <o> <v> <e> <r> <g> <u> <d> <l> <u> <g> <a> <l> : "𒄡"   # CUNEIFORM SIGN GUD OVER GUD LUGAL
+<Multi_key> <c> <g> <u> <l> : "𒄢"   # CUNEIFORM SIGN GUL
+<Multi_key> <c> <g> <u> <m> : "𒄣"   # CUNEIFORM SIGN GUM
+<Multi_key> <c> <g> <u> <m> <t> <i> <m> <e> <s> <s> <h> <e> : "𒄤"   # CUNEIFORM SIGN GUM TIMES SHE
+<Multi_key> <c> <g> <u> <r> : "𒄥"   # CUNEIFORM SIGN GUR
+<Multi_key> <c> <g> <u> <r> <7> : "𒄦"   # CUNEIFORM SIGN GUR7
+<Multi_key> <c> <g> <u> <r> <u> <n> : "𒄧"   # CUNEIFORM SIGN GURUN
+<Multi_key> <c> <g> <u> <r> <u> <s> <h> : "𒄨"   # CUNEIFORM SIGN GURUSH
+<Multi_key> <c> <h> <a> : "𒄩"   # CUNEIFORM SIGN HA
+<Multi_key> <c> <h> <a> <t> <e> <n> <u> : "𒄪"   # CUNEIFORM SIGN HA TENU
+<Multi_key> <c> <h> <a> <g> <u> <n> <u> : "𒄫"   # CUNEIFORM SIGN HA GUNU
+<Multi_key> <c> <h> <a> <l> : "𒄬"   # CUNEIFORM SIGN HAL
+<Multi_key> <c> <h> <i> : "𒄭"   # CUNEIFORM SIGN HI
+<Multi_key> <c> <h> <i> <t> <i> <m> <e> <s> <a> <s> <h> : "𒄮"   # CUNEIFORM SIGN HI TIMES ASH
+<Multi_key> <c> <h> <i> <t> <i> <m> <e> <s> <a> <s> <h> <2> : "𒄯"   # CUNEIFORM SIGN HI TIMES ASH2
+<Multi_key> <c> <h> <i> <t> <i> <m> <e> <s> <b> <a> <d> : "𒄰"   # CUNEIFORM SIGN HI TIMES BAD
+<Multi_key> <c> <h> <i> <t> <i> <m> <e> <s> <d> <i> <s> <h> : "𒄱"   # CUNEIFORM SIGN HI TIMES DISH
+<Multi_key> <c> <h> <i> <t> <i> <m> <e> <s> <g> <a> <d> : "𒄲"   # CUNEIFORM SIGN HI TIMES GAD
+<Multi_key> <c> <h> <i> <t> <i> <m> <e> <s> <k> <i> <n> : "𒄳"   # CUNEIFORM SIGN HI TIMES KIN
+<Multi_key> <c> <h> <i> <t> <i> <m> <e> <s> <n> <u> <n> : "𒄴"   # CUNEIFORM SIGN HI TIMES NUN
+<Multi_key> <c> <h> <i> <t> <i> <m> <e> <s> <s> <h> <e> : "𒄵"   # CUNEIFORM SIGN HI TIMES SHE
+<Multi_key> <c> <h> <i> <t> <i> <m> <e> <s> <u> : "𒄶"   # CUNEIFORM SIGN HI TIMES U
+<Multi_key> <c> <h> <u> : "𒄷"   # CUNEIFORM SIGN HU
+<Multi_key> <c> <h> <u> <b> <2> : "𒄸"   # CUNEIFORM SIGN HUB2
+<Multi_key> <c> <h> <u> <b> <2> <t> <i> <m> <e> <s> <a> <n> : "𒄹"   # CUNEIFORM SIGN HUB2 TIMES AN
+<Multi_key> <c> <h> <u> <b> <2> <t> <i> <m> <e> <s> <h> <a> <l> : "𒄺"   # CUNEIFORM SIGN HUB2 TIMES HAL
+<Multi_key> <c> <h> <u> <b> <2> <t> <i> <m> <e> <s> <k> <a> <s> <k> <a> <l> : "𒄻"   # CUNEIFORM SIGN HUB2 TIMES KASKAL
+<Multi_key> <c> <h> <u> <b> <2> <t> <i> <m> <e> <s> <l> <i> <s> <h> : "𒄼"   # CUNEIFORM SIGN HUB2 TIMES LISH
+<Multi_key> <c> <h> <u> <b> <2> <t> <i> <m> <e> <s> <u> <d> : "𒄽"   # CUNEIFORM SIGN HUB2 TIMES UD
+<Multi_key> <c> <h> <u> <l> <2> : "𒄾"   # CUNEIFORM SIGN HUL2
+<Multi_key> <c> <i> : "𒄿"   # CUNEIFORM SIGN I
+<Multi_key> <c> <i> <a> : "𒅀"   # CUNEIFORM SIGN I A
+<Multi_key> <c> <i> <b> : "𒅁"   # CUNEIFORM SIGN IB
+<Multi_key> <c> <i> <d> <i> <m> : "𒅂"   # CUNEIFORM SIGN IDIM
+<Multi_key> <c> <i> <d> <i> <m> <o> <v> <e> <r> <i> <d> <i> <m> <b> <u> <r> : "𒅃"   # CUNEIFORM SIGN IDIM OVER IDIM BUR
+<Multi_key> <c> <i> <d> <i> <m> <o> <v> <e> <r> <i> <d> <i> <m> <s> <q> <u> <a> <r> <e> <d> : "𒅄"   # CUNEIFORM SIGN IDIM OVER IDIM SQUARED
+<Multi_key> <c> <i> <g> : "𒅅"   # CUNEIFORM SIGN IG
+<Multi_key> <c> <i> <g> <i> : "𒅆"   # CUNEIFORM SIGN IGI
+<Multi_key> <c> <i> <g> <i> <d> <i> <b> : "𒅇"   # CUNEIFORM SIGN IGI DIB
+<Multi_key> <c> <i> <g> <i> <r> <i> : "𒅈"   # CUNEIFORM SIGN IGI RI
+<Multi_key> <c> <i> <g> <i> <o> <v> <e> <r> <i> <g> <i> <s> <h> <i> <r> <o> <v> <e> <r> <s> <h> <i> <r> <u> <d> <o> <v> <e> <r> <u> <d> : "𒅉"   # CUNEIFORM SIGN IGI OVER IGI SHIR OVER SHIR UD OVER UD
+<Multi_key> <c> <i> <g> <i> <g> <u> <n> <u> : "𒅊"   # CUNEIFORM SIGN IGI GUNU
+<Multi_key> <c> <i> <l> : "𒅋"   # CUNEIFORM SIGN IL
+<Multi_key> <c> <i> <l> <t> <i> <m> <e> <s> <g> <a> <n> <2> <t> <e> <n> <u> : "𒅌"   # CUNEIFORM SIGN IL TIMES GAN2 TENU
+<Multi_key> <c> <i> <l> <2> : "𒅍"   # CUNEIFORM SIGN IL2
+<Multi_key> <c> <i> <m> : "𒅎"   # CUNEIFORM SIGN IM
+<Multi_key> <c> <i> <m> <t> <i> <m> <e> <s> <t> <a> <k> <4> : "𒅏"   # CUNEIFORM SIGN IM TIMES TAK4
+<Multi_key> <c> <i> <m> <c> <r> <o> <s> <s> <i> <n> <g> <i> <m> : "𒅐"   # CUNEIFORM SIGN IM CROSSING IM
+<Multi_key> <c> <i> <m> <o> <p> <p> <o> <s> <i> <n> <g> <i> <m> : "𒅑"   # CUNEIFORM SIGN IM OPPOSING IM
+<Multi_key> <c> <i> <m> <s> <q> <u> <a> <r> <e> <d> : "𒅒"   # CUNEIFORM SIGN IM SQUARED
+<Multi_key> <c> <i> <m> <i> <n> : "𒅓"   # CUNEIFORM SIGN IMIN
+<Multi_key> <c> <i> <n> : "𒅔"   # CUNEIFORM SIGN IN
+<Multi_key> <c> <i> <r> : "𒅕"   # CUNEIFORM SIGN IR
+<Multi_key> <c> <i> <s> <h> : "𒅖"   # CUNEIFORM SIGN ISH
+<Multi_key> <c> <k> <a> : "𒅗"   # CUNEIFORM SIGN KA
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <a> : "𒅘"   # CUNEIFORM SIGN KA TIMES A
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <a> <d> : "𒅙"   # CUNEIFORM SIGN KA TIMES AD
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <a> <d> <p> <l> <u> <s> <k> <u> <3> : "𒅚"   # CUNEIFORM SIGN KA TIMES AD PLUS KU3
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <a> <s> <h> <2> : "𒅛"   # CUNEIFORM SIGN KA TIMES ASH2
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <b> <a> <d> : "𒅜"   # CUNEIFORM SIGN KA TIMES BAD
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <b> <a> <l> <a> <g> : "𒅝"   # CUNEIFORM SIGN KA TIMES BALAG
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <b> <a> <r> : "𒅞"   # CUNEIFORM SIGN KA TIMES BAR
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <b> <i> : "𒅟"   # CUNEIFORM SIGN KA TIMES BI
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <e> <r> <i> <n> <2> : "𒅠"   # CUNEIFORM SIGN KA TIMES ERIN2
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <e> <s> <h> <2> : "𒅡"   # CUNEIFORM SIGN KA TIMES ESH2
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <g> <a> : "𒅢"   # CUNEIFORM SIGN KA TIMES GA
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <g> <a> <l> : "𒅣"   # CUNEIFORM SIGN KA TIMES GAL
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <g> <a> <n> <2> <t> <e> <n> <u> : "𒅤"   # CUNEIFORM SIGN KA TIMES GAN2 TENU
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <g> <a> <r> : "𒅥"   # CUNEIFORM SIGN KA TIMES GAR
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <g> <a> <r> <p> <l> <u> <s> <s> <h> <a> <3> <p> <l> <u> <s> <a> : "𒅦"   # CUNEIFORM SIGN KA TIMES GAR PLUS SHA3 PLUS A
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <g> <i> : "𒅧"   # CUNEIFORM SIGN KA TIMES GI
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <g> <i> <r> <2> : "𒅨"   # CUNEIFORM SIGN KA TIMES GIR2
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <g> <i> <s> <h> <p> <l> <u> <s> <s> <a> <r> : "𒅩"   # CUNEIFORM SIGN KA TIMES GISH PLUS SAR
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <g> <i> <s> <h> <c> <r> <o> <s> <s> <i> <n> <g> <g> <i> <s> <h> : "𒅪"   # CUNEIFORM SIGN KA TIMES GISH CROSSING GISH
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <g> <u> : "𒅫"   # CUNEIFORM SIGN KA TIMES GU
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <g> <u> <r> <7> : "𒅬"   # CUNEIFORM SIGN KA TIMES GUR7
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <i> <g> <i> : "𒅭"   # CUNEIFORM SIGN KA TIMES IGI
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <i> <m> : "𒅮"   # CUNEIFORM SIGN KA TIMES IM
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <k> <a> <k> : "𒅯"   # CUNEIFORM SIGN KA TIMES KAK
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <k> <i> : "𒅰"   # CUNEIFORM SIGN KA TIMES KI
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <k> <i> <d> : "𒅱"   # CUNEIFORM SIGN KA TIMES KID
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <l> <i> : "𒅲"   # CUNEIFORM SIGN KA TIMES LI
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <l> <u> : "𒅳"   # CUNEIFORM SIGN KA TIMES LU
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <m> <e> : "𒅴"   # CUNEIFORM SIGN KA TIMES ME
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <m> <e> <p> <l> <u> <s> <d> <u> : "𒅵"   # CUNEIFORM SIGN KA TIMES ME PLUS DU
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <m> <e> <p> <l> <u> <s> <g> <i> : "𒅶"   # CUNEIFORM SIGN KA TIMES ME PLUS GI
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <m> <e> <p> <l> <u> <s> <t> <e> : "𒅷"   # CUNEIFORM SIGN KA TIMES ME PLUS TE
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <m> <i> : "𒅸"   # CUNEIFORM SIGN KA TIMES MI
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <m> <i> <p> <l> <u> <s> <n> <u> <n> <u> <z> : "𒅹"   # CUNEIFORM SIGN KA TIMES MI PLUS NUNUZ
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <n> <e> : "𒅺"   # CUNEIFORM SIGN KA TIMES NE
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <n> <u> <n> : "𒅻"   # CUNEIFORM SIGN KA TIMES NUN
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <p> <i> : "𒅼"   # CUNEIFORM SIGN KA TIMES PI
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <r> <u> : "𒅽"   # CUNEIFORM SIGN KA TIMES RU
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <s> <a> : "𒅾"   # CUNEIFORM SIGN KA TIMES SA
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <s> <a> <r> : "𒅿"   # CUNEIFORM SIGN KA TIMES SAR
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <s> <h> <a> : "𒆀"   # CUNEIFORM SIGN KA TIMES SHA
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <s> <h> <e> : "𒆁"   # CUNEIFORM SIGN KA TIMES SHE
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <s> <h> <i> <d> : "𒆂"   # CUNEIFORM SIGN KA TIMES SHID
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <s> <h> <u> : "𒆃"   # CUNEIFORM SIGN KA TIMES SHU
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <s> <i> <g> : "𒆄"   # CUNEIFORM SIGN KA TIMES SIG
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <s> <u> <h> <u> <r> : "𒆅"   # CUNEIFORM SIGN KA TIMES SUHUR
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <t> <a> <r> : "𒆆"   # CUNEIFORM SIGN KA TIMES TAR
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <u> : "𒆇"   # CUNEIFORM SIGN KA TIMES U
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <u> <2> : "𒆈"   # CUNEIFORM SIGN KA TIMES U2
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <u> <d> : "𒆉"   # CUNEIFORM SIGN KA TIMES UD
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <u> <m> <u> <m> <t> <i> <m> <e> <s> <p> <a> : "𒆊"   # CUNEIFORM SIGN KA TIMES UMUM TIMES PA
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <u> <s> <h> : "𒆋"   # CUNEIFORM SIGN KA TIMES USH
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <z> <i> : "𒆌"   # CUNEIFORM SIGN KA TIMES ZI
+<Multi_key> <c> <k> <a> <2> : "𒆍"   # CUNEIFORM SIGN KA2
+<Multi_key> <c> <k> <a> <2> <c> <r> <o> <s> <s> <i> <n> <g> <k> <a> <2> : "𒆎"   # CUNEIFORM SIGN KA2 CROSSING KA2
+<Multi_key> <c> <k> <a> <b> : "𒆏"   # CUNEIFORM SIGN KAB
+<Multi_key> <c> <k> <a> <d> <2> : "𒆐"   # CUNEIFORM SIGN KAD2
+<Multi_key> <c> <k> <a> <d> <3> : "𒆑"   # CUNEIFORM SIGN KAD3
+<Multi_key> <c> <k> <a> <d> <4> : "𒆒"   # CUNEIFORM SIGN KAD4
+<Multi_key> <c> <k> <a> <d> <5> : "𒆓"   # CUNEIFORM SIGN KAD5
+<Multi_key> <c> <k> <a> <d> <5> <o> <v> <e> <r> <k> <a> <d> <5> : "𒆔"   # CUNEIFORM SIGN KAD5 OVER KAD5
+<Multi_key> <c> <k> <a> <k> : "𒆕"   # CUNEIFORM SIGN KAK
+<Multi_key> <c> <k> <a> <k> <t> <i> <m> <e> <s> <i> <g> <i> <g> <u> <n> <u> : "𒆖"   # CUNEIFORM SIGN KAK TIMES IGI GUNU
+<Multi_key> <c> <k> <a> <l> : "𒆗"   # CUNEIFORM SIGN KAL
+<Multi_key> <c> <k> <a> <l> <t> <i> <m> <e> <s> <b> <a> <d> : "𒆘"   # CUNEIFORM SIGN KAL TIMES BAD
+<Multi_key> <c> <k> <a> <l> <c> <r> <o> <s> <s> <i> <n> <g> <k> <a> <l> : "𒆙"   # CUNEIFORM SIGN KAL CROSSING KAL
+<Multi_key> <c> <k> <a> <m> <2> : "𒆚"   # CUNEIFORM SIGN KAM2
+<Multi_key> <c> <k> <a> <m> <4> : "𒆛"   # CUNEIFORM SIGN KAM4
+<Multi_key> <c> <k> <a> <s> <k> <a> <l> : "𒆜"   # CUNEIFORM SIGN KASKAL
+<Multi_key> <c> <k> <a> <s> <k> <a> <l> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <u> <o> <v> <e> <r> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <u> : "𒆝"   # CUNEIFORM SIGN KASKAL LAGAB TIMES U OVER LAGAB TIMES U
+<Multi_key> <c> <k> <a> <s> <k> <a> <l> <o> <v> <e> <r> <k> <a> <s> <k> <a> <l> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <u> <o> <v> <e> <r> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <u> : "𒆞"   # CUNEIFORM SIGN KASKAL OVER KASKAL LAGAB TIMES U OVER LAGAB TIMES U
+<Multi_key> <c> <k> <e> <s> <h> <2> : "𒆟"   # CUNEIFORM SIGN KESH2
+<Multi_key> <c> <k> <i> : "𒆠"   # CUNEIFORM SIGN KI
+<Multi_key> <c> <k> <i> <t> <i> <m> <e> <s> <b> <a> <d> : "𒆡"   # CUNEIFORM SIGN KI TIMES BAD
+<Multi_key> <c> <k> <i> <t> <i> <m> <e> <s> <u> : "𒆢"   # CUNEIFORM SIGN KI TIMES U
+<Multi_key> <c> <k> <i> <t> <i> <m> <e> <s> <u> <d> : "𒆣"   # CUNEIFORM SIGN KI TIMES UD
+<Multi_key> <c> <k> <i> <d> : "𒆤"   # CUNEIFORM SIGN KID
+<Multi_key> <c> <k> <i> <n> : "𒆥"   # CUNEIFORM SIGN KIN
+<Multi_key> <c> <k> <i> <s> <a> <l> : "𒆦"   # CUNEIFORM SIGN KISAL
+<Multi_key> <c> <k> <i> <s> <h> : "𒆧"   # CUNEIFORM SIGN KISH
+<Multi_key> <c> <k> <i> <s> <i> <m> <5> : "𒆨"   # CUNEIFORM SIGN KISIM5
+<Multi_key> <c> <k> <i> <s> <i> <m> <5> <o> <v> <e> <r> <k> <i> <s> <i> <m> <5> : "𒆩"   # CUNEIFORM SIGN KISIM5 OVER KISIM5
+<Multi_key> <c> <k> <u> : "𒆪"   # CUNEIFORM SIGN KU
+<Multi_key> <c> <k> <u> <o> <v> <e> <r> <h> <i> <t> <i> <m> <e> <s> <a> <s> <h> <2> <k> <u> <o> <v> <e> <r> <h> <i> <t> <i> <m> <e> <s> <a> <s> <h> <2> : "𒆫"   # CUNEIFORM SIGN KU OVER HI TIMES ASH2 KU OVER HI TIMES ASH2
+<Multi_key> <c> <k> <u> <3> : "𒆬"   # CUNEIFORM SIGN KU3
+<Multi_key> <c> <k> <u> <4> : "𒆭"   # CUNEIFORM SIGN KU4
+<Multi_key> <c> <k> <u> <4> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> : "𒆮"   # CUNEIFORM SIGN KU4 VARIANT FORM
+<Multi_key> <c> <k> <u> <7> : "𒆯"   # CUNEIFORM SIGN KU7
+<Multi_key> <c> <k> <u> <l> : "𒆰"   # CUNEIFORM SIGN KUL
+<Multi_key> <c> <k> <u> <l> <g> <u> <n> <u> : "𒆱"   # CUNEIFORM SIGN KUL GUNU
+<Multi_key> <c> <k> <u> <n> : "𒆲"   # CUNEIFORM SIGN KUN
+<Multi_key> <c> <k> <u> <r> : "𒆳"   # CUNEIFORM SIGN KUR
+<Multi_key> <c> <k> <u> <r> <o> <p> <p> <o> <s> <i> <n> <g> <k> <u> <r> : "𒆴"   # CUNEIFORM SIGN KUR OPPOSING KUR
+<Multi_key> <c> <k> <u> <s> <h> <u> <2> : "𒆵"   # CUNEIFORM SIGN KUSHU2
+<Multi_key> <c> <k> <w> <u> <3> <1> <8> : "𒆶"   # CUNEIFORM SIGN KWU318
+<Multi_key> <c> <l> <a> : "𒆷"   # CUNEIFORM SIGN LA
+<Multi_key> <c> <l> <a> <g> <a> <b> : "𒆸"   # CUNEIFORM SIGN LAGAB
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <a> : "𒆹"   # CUNEIFORM SIGN LAGAB TIMES A
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <d> <a> <p> <l> <u> <s> <h> <a> : "𒆺"   # CUNEIFORM SIGN LAGAB TIMES A PLUS DA PLUS HA
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <g> <a> <r> : "𒆻"   # CUNEIFORM SIGN LAGAB TIMES A PLUS GAR
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <l> <a> <l> : "𒆼"   # CUNEIFORM SIGN LAGAB TIMES A PLUS LAL
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <a> <l> : "𒆽"   # CUNEIFORM SIGN LAGAB TIMES AL
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <a> <n> : "𒆾"   # CUNEIFORM SIGN LAGAB TIMES AN
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <a> <s> <h> <z> <i> <d> <a> <t> <e> <n> <u> : "𒆿"   # CUNEIFORM SIGN LAGAB TIMES ASH ZIDA TENU
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <b> <a> <d> : "𒇀"   # CUNEIFORM SIGN LAGAB TIMES BAD
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <b> <i> : "𒇁"   # CUNEIFORM SIGN LAGAB TIMES BI
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <d> <a> <r> : "𒇂"   # CUNEIFORM SIGN LAGAB TIMES DAR
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <e> <n> : "𒇃"   # CUNEIFORM SIGN LAGAB TIMES EN
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <g> <a> : "𒇄"   # CUNEIFORM SIGN LAGAB TIMES GA
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <g> <a> <r> : "𒇅"   # CUNEIFORM SIGN LAGAB TIMES GAR
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <g> <u> <d> : "𒇆"   # CUNEIFORM SIGN LAGAB TIMES GUD
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <g> <u> <d> <p> <l> <u> <s> <g> <u> <d> : "𒇇"   # CUNEIFORM SIGN LAGAB TIMES GUD PLUS GUD
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <h> <a> : "𒇈"   # CUNEIFORM SIGN LAGAB TIMES HA
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <h> <a> <l> : "𒇉"   # CUNEIFORM SIGN LAGAB TIMES HAL
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <h> <i> <t> <i> <m> <e> <s> <n> <u> <n> : "𒇊"   # CUNEIFORM SIGN LAGAB TIMES HI TIMES NUN
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <i> <g> <i> <g> <u> <n> <u> : "𒇋"   # CUNEIFORM SIGN LAGAB TIMES IGI GUNU
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <i> <m> : "𒇌"   # CUNEIFORM SIGN LAGAB TIMES IM
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <i> <m> <p> <l> <u> <s> <h> <a> : "𒇍"   # CUNEIFORM SIGN LAGAB TIMES IM PLUS HA
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <i> <m> <p> <l> <u> <s> <l> <u> : "𒇎"   # CUNEIFORM SIGN LAGAB TIMES IM PLUS LU
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <k> <i> : "𒇏"   # CUNEIFORM SIGN LAGAB TIMES KI
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <k> <i> <n> : "𒇐"   # CUNEIFORM SIGN LAGAB TIMES KIN
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <k> <u> <3> : "𒇑"   # CUNEIFORM SIGN LAGAB TIMES KU3
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <k> <u> <l> : "𒇒"   # CUNEIFORM SIGN LAGAB TIMES KUL
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <k> <u> <l> <p> <l> <u> <s> <h> <i> <p> <l> <u> <s> <a> : "𒇓"   # CUNEIFORM SIGN LAGAB TIMES KUL PLUS HI PLUS A
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <l> <a> <g> <a> <b> : "𒇔"   # CUNEIFORM SIGN LAGAB TIMES LAGAB
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <l> <i> <s> <h> : "𒇕"   # CUNEIFORM SIGN LAGAB TIMES LISH
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <l> <u> : "𒇖"   # CUNEIFORM SIGN LAGAB TIMES LU
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <l> <u> <l> : "𒇗"   # CUNEIFORM SIGN LAGAB TIMES LUL
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <m> <e> : "𒇘"   # CUNEIFORM SIGN LAGAB TIMES ME
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <m> <e> <p> <l> <u> <s> <e> <n> : "𒇙"   # CUNEIFORM SIGN LAGAB TIMES ME PLUS EN
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <m> <u> <s> <h> : "𒇚"   # CUNEIFORM SIGN LAGAB TIMES MUSH
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <n> <e> : "𒇛"   # CUNEIFORM SIGN LAGAB TIMES NE
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <s> <h> <e> <p> <l> <u> <s> <s> <u> <m> : "𒇜"   # CUNEIFORM SIGN LAGAB TIMES SHE PLUS SUM
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <s> <h> <i> <t> <a> <p> <l> <u> <s> <g> <i> <s> <h> <p> <l> <u> <s> <e> <r> <i> <n> <2> : "𒇝"   # CUNEIFORM SIGN LAGAB TIMES SHITA PLUS GISH PLUS ERIN2
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <s> <h> <i> <t> <a> <p> <l> <u> <s> <g> <i> <s> <h> <t> <e> <n> <u> : "𒇞"   # CUNEIFORM SIGN LAGAB TIMES SHITA PLUS GISH TENU
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <s> <h> <u> <2> : "𒇟"   # CUNEIFORM SIGN LAGAB TIMES SHU2
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <s> <h> <u> <2> <p> <l> <u> <s> <s> <h> <u> <2> : "𒇠"   # CUNEIFORM SIGN LAGAB TIMES SHU2 PLUS SHU2
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <s> <u> <m> : "𒇡"   # CUNEIFORM SIGN LAGAB TIMES SUM
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <t> <a> <g> : "𒇢"   # CUNEIFORM SIGN LAGAB TIMES TAG
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <t> <a> <k> <4> : "𒇣"   # CUNEIFORM SIGN LAGAB TIMES TAK4
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <t> <e> <p> <l> <u> <s> <a> <p> <l> <u> <s> <s> <u> <p> <l> <u> <s> <n> <a> : "𒇤"   # CUNEIFORM SIGN LAGAB TIMES TE PLUS A PLUS SU PLUS NA
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <u> : "𒇥"   # CUNEIFORM SIGN LAGAB TIMES U
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <u> <p> <l> <u> <s> <a> : "𒇦"   # CUNEIFORM SIGN LAGAB TIMES U PLUS A
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <u> <p> <l> <u> <s> <u> <p> <l> <u> <s> <u> : "𒇧"   # CUNEIFORM SIGN LAGAB TIMES U PLUS U PLUS U
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <u> <2> <p> <l> <u> <s> <a> <s> <h> : "𒇨"   # CUNEIFORM SIGN LAGAB TIMES U2 PLUS ASH
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <u> <d> : "𒇩"   # CUNEIFORM SIGN LAGAB TIMES UD
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <u> <s> <h> : "𒇪"   # CUNEIFORM SIGN LAGAB TIMES USH
+<Multi_key> <c> <l> <a> <g> <a> <b> <s> <q> <u> <a> <r> <e> <d> : "𒇫"   # CUNEIFORM SIGN LAGAB SQUARED
+<Multi_key> <c> <l> <a> <g> <a> <r> : "𒇬"   # CUNEIFORM SIGN LAGAR
+<Multi_key> <c> <l> <a> <g> <a> <r> <t> <i> <m> <e> <s> <s> <h> <e> : "𒇭"   # CUNEIFORM SIGN LAGAR TIMES SHE
+<Multi_key> <c> <l> <a> <g> <a> <r> <t> <i> <m> <e> <s> <s> <h> <e> <p> <l> <u> <s> <s> <u> <m> : "𒇮"   # CUNEIFORM SIGN LAGAR TIMES SHE PLUS SUM
+<Multi_key> <c> <l> <a> <g> <a> <r> <g> <u> <n> <u> : "𒇯"   # CUNEIFORM SIGN LAGAR GUNU
+<Multi_key> <c> <l> <a> <g> <a> <r> <g> <u> <n> <u> <o> <v> <e> <r> <l> <a> <g> <a> <r> <g> <u> <n> <u> <s> <h> <e> : "𒇰"   # CUNEIFORM SIGN LAGAR GUNU OVER LAGAR GUNU SHE
+<Multi_key> <c> <l> <a> <h> <s> <h> <u> : "𒇱"   # CUNEIFORM SIGN LAHSHU
+<Multi_key> <c> <l> <a> <l> : "𒇲"   # CUNEIFORM SIGN LAL
+<Multi_key> <c> <l> <a> <l> <t> <i> <m> <e> <s> <l> <a> <l> : "𒇳"   # CUNEIFORM SIGN LAL TIMES LAL
+<Multi_key> <c> <l> <a> <m> : "𒇴"   # CUNEIFORM SIGN LAM
+<Multi_key> <c> <l> <a> <m> <t> <i> <m> <e> <s> <k> <u> <r> : "𒇵"   # CUNEIFORM SIGN LAM TIMES KUR
+<Multi_key> <c> <l> <a> <m> <t> <i> <m> <e> <s> <k> <u> <r> <p> <l> <u> <s> <r> <u> : "𒇶"   # CUNEIFORM SIGN LAM TIMES KUR PLUS RU
+<Multi_key> <c> <l> <i> : "𒇷"   # CUNEIFORM SIGN LI
+<Multi_key> <c> <l> <i> <l> : "𒇸"   # CUNEIFORM SIGN LIL
+<Multi_key> <c> <l> <i> <m> <m> <u> <2> : "𒇹"   # CUNEIFORM SIGN LIMMU2
+<Multi_key> <c> <l> <i> <s> <h> : "𒇺"   # CUNEIFORM SIGN LISH
+<Multi_key> <c> <l> <u> : "𒇻"   # CUNEIFORM SIGN LU
+<Multi_key> <c> <l> <u> <t> <i> <m> <e> <s> <b> <a> <d> : "𒇼"   # CUNEIFORM SIGN LU TIMES BAD
+<Multi_key> <c> <l> <u> <2> : "𒇽"   # CUNEIFORM SIGN LU2
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <a> <l> : "𒇾"   # CUNEIFORM SIGN LU2 TIMES AL
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <b> <a> <d> : "𒇿"   # CUNEIFORM SIGN LU2 TIMES BAD
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <e> <s> <h> <2> : "𒈀"   # CUNEIFORM SIGN LU2 TIMES ESH2
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <e> <s> <h> <2> <t> <e> <n> <u> : "𒈁"   # CUNEIFORM SIGN LU2 TIMES ESH2 TENU
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <g> <a> <n> <2> <t> <e> <n> <u> : "𒈂"   # CUNEIFORM SIGN LU2 TIMES GAN2 TENU
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <h> <i> <t> <i> <m> <e> <s> <b> <a> <d> : "𒈃"   # CUNEIFORM SIGN LU2 TIMES HI TIMES BAD
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <i> <m> : "𒈄"   # CUNEIFORM SIGN LU2 TIMES IM
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <k> <a> <d> <2> : "𒈅"   # CUNEIFORM SIGN LU2 TIMES KAD2
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <k> <a> <d> <3> : "𒈆"   # CUNEIFORM SIGN LU2 TIMES KAD3
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <k> <a> <d> <3> <p> <l> <u> <s> <a> <s> <h> : "𒈇"   # CUNEIFORM SIGN LU2 TIMES KAD3 PLUS ASH
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <k> <i> : "𒈈"   # CUNEIFORM SIGN LU2 TIMES KI
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <l> <a> <p> <l> <u> <s> <a> <s> <h> : "𒈉"   # CUNEIFORM SIGN LU2 TIMES LA PLUS ASH
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <l> <a> <g> <a> <b> : "𒈊"   # CUNEIFORM SIGN LU2 TIMES LAGAB
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <m> <e> <p> <l> <u> <s> <e> <n> : "𒈋"   # CUNEIFORM SIGN LU2 TIMES ME PLUS EN
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <n> <e> : "𒈌"   # CUNEIFORM SIGN LU2 TIMES NE
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <n> <u> : "𒈍"   # CUNEIFORM SIGN LU2 TIMES NU
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <s> <i> <p> <l> <u> <s> <a> <s> <h> : "𒈎"   # CUNEIFORM SIGN LU2 TIMES SI PLUS ASH
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <s> <i> <k> <2> <p> <l> <u> <s> <b> <u> : "𒈏"   # CUNEIFORM SIGN LU2 TIMES SIK2 PLUS BU
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <t> <u> <g> <2> : "𒈐"   # CUNEIFORM SIGN LU2 TIMES TUG2
+<Multi_key> <c> <l> <u> <2> <t> <e> <n> <u> : "𒈑"   # CUNEIFORM SIGN LU2 TENU
+<Multi_key> <c> <l> <u> <2> <c> <r> <o> <s> <s> <i> <n> <g> <l> <u> <2> : "𒈒"   # CUNEIFORM SIGN LU2 CROSSING LU2
+<Multi_key> <c> <l> <u> <2> <o> <p> <p> <o> <s> <i> <n> <g> <l> <u> <2> : "𒈓"   # CUNEIFORM SIGN LU2 OPPOSING LU2
+<Multi_key> <c> <l> <u> <2> <s> <q> <u> <a> <r> <e> <d> : "𒈔"   # CUNEIFORM SIGN LU2 SQUARED
+<Multi_key> <c> <l> <u> <2> <s> <h> <e> <s> <h> <i> <g> : "𒈕"   # CUNEIFORM SIGN LU2 SHESHIG
+<Multi_key> <c> <l> <u> <3> : "𒈖"   # CUNEIFORM SIGN LU3
+<Multi_key> <c> <l> <u> <g> <a> <l> : "𒈗"   # CUNEIFORM SIGN LUGAL
+<Multi_key> <c> <l> <u> <g> <a> <l> <o> <v> <e> <r> <l> <u> <g> <a> <l> : "𒈘"   # CUNEIFORM SIGN LUGAL OVER LUGAL
+<Multi_key> <c> <l> <u> <g> <a> <l> <o> <p> <p> <o> <s> <i> <n> <g> <l> <u> <g> <a> <l> : "𒈙"   # CUNEIFORM SIGN LUGAL OPPOSING LUGAL
+<Multi_key> <c> <l> <u> <g> <a> <l> <s> <h> <e> <s> <h> <i> <g> : "𒈚"   # CUNEIFORM SIGN LUGAL SHESHIG
+<Multi_key> <c> <l> <u> <h> : "𒈛"   # CUNEIFORM SIGN LUH
+<Multi_key> <c> <l> <u> <l> : "𒈜"   # CUNEIFORM SIGN LUL
+<Multi_key> <c> <l> <u> <m> : "𒈝"   # CUNEIFORM SIGN LUM
+<Multi_key> <c> <l> <u> <m> <o> <v> <e> <r> <l> <u> <m> : "𒈞"   # CUNEIFORM SIGN LUM OVER LUM
+<Multi_key> <c> <l> <u> <m> <o> <v> <e> <r> <l> <u> <m> <g> <a> <r> <o> <v> <e> <r> <g> <a> <r> : "𒈟"   # CUNEIFORM SIGN LUM OVER LUM GAR OVER GAR
+<Multi_key> <c> <m> <a> : "𒈠"   # CUNEIFORM SIGN MA
+<Multi_key> <c> <m> <a> <t> <i> <m> <e> <s> <t> <a> <k> <4> : "𒈡"   # CUNEIFORM SIGN MA TIMES TAK4
+<Multi_key> <c> <m> <a> <g> <u> <n> <u> : "𒈢"   # CUNEIFORM SIGN MA GUNU
+<Multi_key> <c> <m> <a> <2> : "𒈣"   # CUNEIFORM SIGN MA2
+<Multi_key> <c> <m> <a> <h> : "𒈤"   # CUNEIFORM SIGN MAH
+<Multi_key> <c> <m> <a> <r> : "𒈥"   # CUNEIFORM SIGN MAR
+<Multi_key> <c> <m> <a> <s> <h> : "𒈦"   # CUNEIFORM SIGN MASH
+<Multi_key> <c> <m> <a> <s> <h> <2> : "𒈧"   # CUNEIFORM SIGN MASH2
+<Multi_key> <c> <m> <e> : "𒈨"   # CUNEIFORM SIGN ME
+<Multi_key> <c> <m> <e> <s> : "𒈩"   # CUNEIFORM SIGN MES
+<Multi_key> <c> <m> <i> : "𒈪"   # CUNEIFORM SIGN MI
+<Multi_key> <c> <m> <i> <n> : "𒈫"   # CUNEIFORM SIGN MIN
+<Multi_key> <c> <m> <u> : "𒈬"   # CUNEIFORM SIGN MU
+<Multi_key> <c> <m> <u> <o> <v> <e> <r> <m> <u> : "𒈭"   # CUNEIFORM SIGN MU OVER MU
+<Multi_key> <c> <m> <u> <g> : "𒈮"   # CUNEIFORM SIGN MUG
+<Multi_key> <c> <m> <u> <g> <g> <u> <n> <u> : "𒈯"   # CUNEIFORM SIGN MUG GUNU
+<Multi_key> <c> <m> <u> <n> <s> <u> <b> : "𒈰"   # CUNEIFORM SIGN MUNSUB
+<Multi_key> <c> <m> <u> <r> <g> <u> <2> : "𒈱"   # CUNEIFORM SIGN MURGU2
+<Multi_key> <c> <m> <u> <s> <h> : "𒈲"   # CUNEIFORM SIGN MUSH
+<Multi_key> <c> <m> <u> <s> <h> <t> <i> <m> <e> <s> <a> : "𒈳"   # CUNEIFORM SIGN MUSH TIMES A
+<Multi_key> <c> <m> <u> <s> <h> <t> <i> <m> <e> <s> <k> <u> <r> : "𒈴"   # CUNEIFORM SIGN MUSH TIMES KUR
+<Multi_key> <c> <m> <u> <s> <h> <t> <i> <m> <e> <s> <z> <a> : "𒈵"   # CUNEIFORM SIGN MUSH TIMES ZA
+<Multi_key> <c> <m> <u> <s> <h> <o> <v> <e> <r> <m> <u> <s> <h> : "𒈶"   # CUNEIFORM SIGN MUSH OVER MUSH
+<Multi_key> <c> <m> <u> <s> <h> <o> <v> <e> <r> <m> <u> <s> <h> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <n> <a> : "𒈷"   # CUNEIFORM SIGN MUSH OVER MUSH TIMES A PLUS NA
+<Multi_key> <c> <m> <u> <s> <h> <c> <r> <o> <s> <s> <i> <n> <g> <m> <u> <s> <h> : "𒈸"   # CUNEIFORM SIGN MUSH CROSSING MUSH
+<Multi_key> <c> <m> <u> <s> <h> <3> : "𒈹"   # CUNEIFORM SIGN MUSH3
+<Multi_key> <c> <m> <u> <s> <h> <3> <t> <i> <m> <e> <s> <a> : "𒈺"   # CUNEIFORM SIGN MUSH3 TIMES A
+<Multi_key> <c> <m> <u> <s> <h> <3> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <d> <i> : "𒈻"   # CUNEIFORM SIGN MUSH3 TIMES A PLUS DI
+<Multi_key> <c> <m> <u> <s> <h> <3> <t> <i> <m> <e> <s> <d> <i> : "𒈼"   # CUNEIFORM SIGN MUSH3 TIMES DI
+<Multi_key> <c> <m> <u> <s> <h> <3> <g> <u> <n> <u> : "𒈽"   # CUNEIFORM SIGN MUSH3 GUNU
+<Multi_key> <c> <n> <a> : "𒈾"   # CUNEIFORM SIGN NA
+<Multi_key> <c> <n> <a> <2> : "𒈿"   # CUNEIFORM SIGN NA2
+<Multi_key> <c> <n> <a> <g> <a> : "𒉀"   # CUNEIFORM SIGN NAGA
+<Multi_key> <c> <n> <a> <g> <a> <i> <n> <v> <e> <r> <t> <e> <d> : "𒉁"   # CUNEIFORM SIGN NAGA INVERTED
+<Multi_key> <c> <n> <a> <g> <a> <t> <i> <m> <e> <s> <s> <h> <u> <t> <e> <n> <u> : "𒉂"   # CUNEIFORM SIGN NAGA TIMES SHU TENU
+<Multi_key> <c> <n> <a> <g> <a> <o> <p> <p> <o> <s> <i> <n> <g> <n> <a> <g> <a> : "𒉃"   # CUNEIFORM SIGN NAGA OPPOSING NAGA
+<Multi_key> <c> <n> <a> <g> <a> <r> : "𒉄"   # CUNEIFORM SIGN NAGAR
+<Multi_key> <c> <n> <a> <m> <n> <u> <t> <i> <l> <l> <u> : "𒉅"   # CUNEIFORM SIGN NAM NUTILLU
+<Multi_key> <c> <n> <a> <m> : "𒉆"   # CUNEIFORM SIGN NAM
+<Multi_key> <c> <n> <a> <m> <2> : "𒉇"   # CUNEIFORM SIGN NAM2
+<Multi_key> <c> <n> <e> : "𒉈"   # CUNEIFORM SIGN NE
+<Multi_key> <c> <n> <e> <t> <i> <m> <e> <s> <a> : "𒉉"   # CUNEIFORM SIGN NE TIMES A
+<Multi_key> <c> <n> <e> <t> <i> <m> <e> <s> <u> <d> : "𒉊"   # CUNEIFORM SIGN NE TIMES UD
+<Multi_key> <c> <n> <e> <s> <h> <e> <s> <h> <i> <g> : "𒉋"   # CUNEIFORM SIGN NE SHESHIG
+<Multi_key> <c> <n> <i> : "𒉌"   # CUNEIFORM SIGN NI
+<Multi_key> <c> <n> <i> <t> <i> <m> <e> <s> <e> : "𒉍"   # CUNEIFORM SIGN NI TIMES E
+<Multi_key> <c> <n> <i> <2> : "𒉎"   # CUNEIFORM SIGN NI2
+<Multi_key> <c> <n> <i> <m> : "𒉏"   # CUNEIFORM SIGN NIM
+<Multi_key> <c> <n> <i> <m> <t> <i> <m> <e> <s> <g> <a> <n> <2> <t> <e> <n> <u> : "𒉐"   # CUNEIFORM SIGN NIM TIMES GAN2 TENU
+<Multi_key> <c> <n> <i> <m> <t> <i> <m> <e> <s> <g> <a> <r> <p> <l> <u> <s> <g> <a> <n> <2> <t> <e> <n> <u> : "𒉑"   # CUNEIFORM SIGN NIM TIMES GAR PLUS GAN2 TENU
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> : "𒉒"   # CUNEIFORM SIGN NINDA2
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <a> <n> : "𒉓"   # CUNEIFORM SIGN NINDA2 TIMES AN
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <a> <s> <h> : "𒉔"   # CUNEIFORM SIGN NINDA2 TIMES ASH
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <a> <s> <h> <p> <l> <u> <s> <a> <s> <h> : "𒉕"   # CUNEIFORM SIGN NINDA2 TIMES ASH PLUS ASH
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <g> <u> <d> : "𒉖"   # CUNEIFORM SIGN NINDA2 TIMES GUD
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <m> <e> <p> <l> <u> <s> <g> <a> <n> <2> <t> <e> <n> <u> : "𒉗"   # CUNEIFORM SIGN NINDA2 TIMES ME PLUS GAN2 TENU
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <n> <e> : "𒉘"   # CUNEIFORM SIGN NINDA2 TIMES NE
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <n> <u> <n> : "𒉙"   # CUNEIFORM SIGN NINDA2 TIMES NUN
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <s> <h> <e> : "𒉚"   # CUNEIFORM SIGN NINDA2 TIMES SHE
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <s> <h> <e> <p> <l> <u> <s> <a> <a> <n> : "𒉛"   # CUNEIFORM SIGN NINDA2 TIMES SHE PLUS A AN
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <s> <h> <e> <p> <l> <u> <s> <a> <s> <h> : "𒉜"   # CUNEIFORM SIGN NINDA2 TIMES SHE PLUS ASH
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <s> <h> <e> <p> <l> <u> <s> <a> <s> <h> <p> <l> <u> <s> <a> <s> <h> : "𒉝"   # CUNEIFORM SIGN NINDA2 TIMES SHE PLUS ASH PLUS ASH
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <u> <2> <p> <l> <u> <s> <a> <s> <h> : "𒉞"   # CUNEIFORM SIGN NINDA2 TIMES U2 PLUS ASH
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <u> <s> <h> : "𒉟"   # CUNEIFORM SIGN NINDA2 TIMES USH
+<Multi_key> <c> <n> <i> <s> <a> <g> : "𒉠"   # CUNEIFORM SIGN NISAG
+<Multi_key> <c> <n> <u> : "𒉡"   # CUNEIFORM SIGN NU
+<Multi_key> <c> <n> <u> <1> <1> : "𒉢"   # CUNEIFORM SIGN NU11
+<Multi_key> <c> <n> <u> <n> : "𒉣"   # CUNEIFORM SIGN NUN
+<Multi_key> <c> <n> <u> <n> <l> <a> <g> <a> <r> <t> <i> <m> <e> <s> <g> <a> <r> : "𒉤"   # CUNEIFORM SIGN NUN LAGAR TIMES GAR
+<Multi_key> <c> <n> <u> <n> <l> <a> <g> <a> <r> <t> <i> <m> <e> <s> <m> <a> <s> <h> : "𒉥"   # CUNEIFORM SIGN NUN LAGAR TIMES MASH
+<Multi_key> <c> <n> <u> <n> <l> <a> <g> <a> <r> <t> <i> <m> <e> <s> <s> <a> <l> : "𒉦"   # CUNEIFORM SIGN NUN LAGAR TIMES SAL
+<Multi_key> <c> <n> <u> <n> <l> <a> <g> <a> <r> <t> <i> <m> <e> <s> <s> <a> <l> <o> <v> <e> <r> <n> <u> <n> <l> <a> <g> <a> <r> <t> <i> <m> <e> <s> <s> <a> <l> : "𒉧"   # CUNEIFORM SIGN NUN LAGAR TIMES SAL OVER NUN LAGAR TIMES SAL
+<Multi_key> <c> <n> <u> <n> <l> <a> <g> <a> <r> <t> <i> <m> <e> <s> <u> <s> <h> : "𒉨"   # CUNEIFORM SIGN NUN LAGAR TIMES USH
+<Multi_key> <c> <n> <u> <n> <t> <e> <n> <u> : "𒉩"   # CUNEIFORM SIGN NUN TENU
+<Multi_key> <c> <n> <u> <n> <o> <v> <e> <r> <n> <u> <n> : "𒉪"   # CUNEIFORM SIGN NUN OVER NUN
+<Multi_key> <c> <n> <u> <n> <c> <r> <o> <s> <s> <i> <n> <g> <n> <u> <n> : "𒉫"   # CUNEIFORM SIGN NUN CROSSING NUN
+<Multi_key> <c> <n> <u> <n> <c> <r> <o> <s> <s> <i> <n> <g> <n> <u> <n> <l> <a> <g> <a> <r> <o> <v> <e> <r> <l> <a> <g> <a> <r> : "𒉬"   # CUNEIFORM SIGN NUN CROSSING NUN LAGAR OVER LAGAR
+<Multi_key> <c> <n> <u> <n> <u> <z> : "𒉭"   # CUNEIFORM SIGN NUNUZ
+<Multi_key> <c> <n> <u> <n> <u> <z> <a> <b> <2> <t> <i> <m> <e> <s> <a> <s> <h> <g> <a> <b> : "𒉮"   # CUNEIFORM SIGN NUNUZ AB2 TIMES ASHGAB
+<Multi_key> <c> <n> <u> <n> <u> <z> <a> <b> <2> <t> <i> <m> <e> <s> <b> <i> : "𒉯"   # CUNEIFORM SIGN NUNUZ AB2 TIMES BI
+<Multi_key> <c> <n> <u> <n> <u> <z> <a> <b> <2> <t> <i> <m> <e> <s> <d> <u> <g> : "𒉰"   # CUNEIFORM SIGN NUNUZ AB2 TIMES DUG
+<Multi_key> <c> <n> <u> <n> <u> <z> <a> <b> <2> <t> <i> <m> <e> <s> <g> <u> <d> : "𒉱"   # CUNEIFORM SIGN NUNUZ AB2 TIMES GUD
+<Multi_key> <c> <n> <u> <n> <u> <z> <a> <b> <2> <t> <i> <m> <e> <s> <i> <g> <i> <g> <u> <n> <u> : "𒉲"   # CUNEIFORM SIGN NUNUZ AB2 TIMES IGI GUNU
+<Multi_key> <c> <n> <u> <n> <u> <z> <a> <b> <2> <t> <i> <m> <e> <s> <k> <a> <d> <3> : "𒉳"   # CUNEIFORM SIGN NUNUZ AB2 TIMES KAD3
+<Multi_key> <c> <n> <u> <n> <u> <z> <a> <b> <2> <t> <i> <m> <e> <s> <l> <a> : "𒉴"   # CUNEIFORM SIGN NUNUZ AB2 TIMES LA
+<Multi_key> <c> <n> <u> <n> <u> <z> <a> <b> <2> <t> <i> <m> <e> <s> <n> <e> : "𒉵"   # CUNEIFORM SIGN NUNUZ AB2 TIMES NE
+<Multi_key> <c> <n> <u> <n> <u> <z> <a> <b> <2> <t> <i> <m> <e> <s> <s> <i> <l> <a> <3> : "𒉶"   # CUNEIFORM SIGN NUNUZ AB2 TIMES SILA3
+<Multi_key> <c> <n> <u> <n> <u> <z> <a> <b> <2> <t> <i> <m> <e> <s> <u> <2> : "𒉷"   # CUNEIFORM SIGN NUNUZ AB2 TIMES U2
+<Multi_key> <c> <n> <u> <n> <u> <z> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <b> <i> : "𒉸"   # CUNEIFORM SIGN NUNUZ KISIM5 TIMES BI
+<Multi_key> <c> <n> <u> <n> <u> <z> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <b> <i> <u> : "𒉹"   # CUNEIFORM SIGN NUNUZ KISIM5 TIMES BI U
+<Multi_key> <c> <p> <a> : "𒉺"   # CUNEIFORM SIGN PA
+<Multi_key> <c> <p> <a> <d> : "𒉻"   # CUNEIFORM SIGN PAD
+<Multi_key> <c> <p> <a> <n> : "𒉼"   # CUNEIFORM SIGN PAN
+<Multi_key> <c> <p> <a> <p> : "𒉽"   # CUNEIFORM SIGN PAP
+<Multi_key> <c> <p> <e> <s> <h> <2> : "𒉾"   # CUNEIFORM SIGN PESH2
+<Multi_key> <c> <p> <i> : "𒉿"   # CUNEIFORM SIGN PI
+<Multi_key> <c> <p> <i> <t> <i> <m> <e> <s> <a> : "𒊀"   # CUNEIFORM SIGN PI TIMES A
+<Multi_key> <c> <p> <i> <t> <i> <m> <e> <s> <a> <b> : "𒊁"   # CUNEIFORM SIGN PI TIMES AB
+<Multi_key> <c> <p> <i> <t> <i> <m> <e> <s> <b> <i> : "𒊂"   # CUNEIFORM SIGN PI TIMES BI
+<Multi_key> <c> <p> <i> <t> <i> <m> <e> <s> <b> <u> : "𒊃"   # CUNEIFORM SIGN PI TIMES BU
+<Multi_key> <c> <p> <i> <t> <i> <m> <e> <s> <e> : "𒊄"   # CUNEIFORM SIGN PI TIMES E
+<Multi_key> <c> <p> <i> <t> <i> <m> <e> <s> <i> : "𒊅"   # CUNEIFORM SIGN PI TIMES I
+<Multi_key> <c> <p> <i> <t> <i> <m> <e> <s> <i> <b> : "𒊆"   # CUNEIFORM SIGN PI TIMES IB
+<Multi_key> <c> <p> <i> <t> <i> <m> <e> <s> <u> : "𒊇"   # CUNEIFORM SIGN PI TIMES U
+<Multi_key> <c> <p> <i> <t> <i> <m> <e> <s> <u> <2> : "𒊈"   # CUNEIFORM SIGN PI TIMES U2
+<Multi_key> <c> <p> <i> <c> <r> <o> <s> <s> <i> <n> <g> <p> <i> : "𒊉"   # CUNEIFORM SIGN PI CROSSING PI
+<Multi_key> <c> <p> <i> <r> <i> <g> : "𒊊"   # CUNEIFORM SIGN PIRIG
+<Multi_key> <c> <p> <i> <r> <i> <g> <t> <i> <m> <e> <s> <k> <a> <l> : "𒊋"   # CUNEIFORM SIGN PIRIG TIMES KAL
+<Multi_key> <c> <p> <i> <r> <i> <g> <t> <i> <m> <e> <s> <u> <d> : "𒊌"   # CUNEIFORM SIGN PIRIG TIMES UD
+<Multi_key> <c> <p> <i> <r> <i> <g> <t> <i> <m> <e> <s> <z> <a> : "𒊍"   # CUNEIFORM SIGN PIRIG TIMES ZA
+<Multi_key> <c> <p> <i> <r> <i> <g> <o> <p> <p> <o> <s> <i> <n> <g> <p> <i> <r> <i> <g> : "𒊎"   # CUNEIFORM SIGN PIRIG OPPOSING PIRIG
+<Multi_key> <c> <r> <a> : "𒊏"   # CUNEIFORM SIGN RA
+<Multi_key> <c> <r> <a> <b> : "𒊐"   # CUNEIFORM SIGN RAB
+<Multi_key> <c> <r> <i> : "𒊑"   # CUNEIFORM SIGN RI
+<Multi_key> <c> <r> <u> : "𒊒"   # CUNEIFORM SIGN RU
+<Multi_key> <c> <s> <a> : "𒊓"   # CUNEIFORM SIGN SA
+<Multi_key> <c> <s> <a> <g> <n> <u> <t> <i> <l> <l> <u> : "𒊔"   # CUNEIFORM SIGN SAG NUTILLU
+<Multi_key> <c> <s> <a> <g> : "𒊕"   # CUNEIFORM SIGN SAG
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <a> : "𒊖"   # CUNEIFORM SIGN SAG TIMES A
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <d> <u> : "𒊗"   # CUNEIFORM SIGN SAG TIMES DU
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <d> <u> <b> : "𒊘"   # CUNEIFORM SIGN SAG TIMES DUB
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <h> <a> : "𒊙"   # CUNEIFORM SIGN SAG TIMES HA
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <k> <a> <k> : "𒊚"   # CUNEIFORM SIGN SAG TIMES KAK
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <k> <u> <r> : "𒊛"   # CUNEIFORM SIGN SAG TIMES KUR
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <l> <u> <m> : "𒊜"   # CUNEIFORM SIGN SAG TIMES LUM
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <m> <i> : "𒊝"   # CUNEIFORM SIGN SAG TIMES MI
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <n> <u> <n> : "𒊞"   # CUNEIFORM SIGN SAG TIMES NUN
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <s> <a> <l> : "𒊟"   # CUNEIFORM SIGN SAG TIMES SAL
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <s> <h> <i> <d> : "𒊠"   # CUNEIFORM SIGN SAG TIMES SHID
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <t> <a> <b> : "𒊡"   # CUNEIFORM SIGN SAG TIMES TAB
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <u> <2> : "𒊢"   # CUNEIFORM SIGN SAG TIMES U2
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <u> <b> : "𒊣"   # CUNEIFORM SIGN SAG TIMES UB
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <u> <m> : "𒊤"   # CUNEIFORM SIGN SAG TIMES UM
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <u> <r> : "𒊥"   # CUNEIFORM SIGN SAG TIMES UR
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <u> <s> <h> : "𒊦"   # CUNEIFORM SIGN SAG TIMES USH
+<Multi_key> <c> <s> <a> <g> <o> <v> <e> <r> <s> <a> <g> : "𒊧"   # CUNEIFORM SIGN SAG OVER SAG
+<Multi_key> <c> <s> <a> <g> <g> <u> <n> <u> : "𒊨"   # CUNEIFORM SIGN SAG GUNU
+<Multi_key> <c> <s> <a> <l> : "𒊩"   # CUNEIFORM SIGN SAL
+<Multi_key> <c> <s> <a> <l> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <a> <s> <h> <2> : "𒊪"   # CUNEIFORM SIGN SAL LAGAB TIMES ASH2
+<Multi_key> <c> <s> <a> <n> <g> <a> <2> : "𒊫"   # CUNEIFORM SIGN SANGA2
+<Multi_key> <c> <s> <a> <r> : "𒊬"   # CUNEIFORM SIGN SAR
+<Multi_key> <c> <s> <h> <a> : "𒊭"   # CUNEIFORM SIGN SHA
+<Multi_key> <c> <s> <h> <a> <3> : "𒊮"   # CUNEIFORM SIGN SHA3
+<Multi_key> <c> <s> <h> <a> <3> <t> <i> <m> <e> <s> <a> : "𒊯"   # CUNEIFORM SIGN SHA3 TIMES A
+<Multi_key> <c> <s> <h> <a> <3> <t> <i> <m> <e> <s> <b> <a> <d> : "𒊰"   # CUNEIFORM SIGN SHA3 TIMES BAD
+<Multi_key> <c> <s> <h> <a> <3> <t> <i> <m> <e> <s> <g> <i> <s> <h> : "𒊱"   # CUNEIFORM SIGN SHA3 TIMES GISH
+<Multi_key> <c> <s> <h> <a> <3> <t> <i> <m> <e> <s> <n> <e> : "𒊲"   # CUNEIFORM SIGN SHA3 TIMES NE
+<Multi_key> <c> <s> <h> <a> <3> <t> <i> <m> <e> <s> <s> <h> <u> <2> : "𒊳"   # CUNEIFORM SIGN SHA3 TIMES SHU2
+<Multi_key> <c> <s> <h> <a> <3> <t> <i> <m> <e> <s> <t> <u> <r> : "𒊴"   # CUNEIFORM SIGN SHA3 TIMES TUR
+<Multi_key> <c> <s> <h> <a> <3> <t> <i> <m> <e> <s> <u> : "𒊵"   # CUNEIFORM SIGN SHA3 TIMES U
+<Multi_key> <c> <s> <h> <a> <3> <t> <i> <m> <e> <s> <u> <p> <l> <u> <s> <a> : "𒊶"   # CUNEIFORM SIGN SHA3 TIMES U PLUS A
+<Multi_key> <c> <s> <h> <a> <6> : "𒊷"   # CUNEIFORM SIGN SHA6
+<Multi_key> <c> <s> <h> <a> <b> <6> : "𒊸"   # CUNEIFORM SIGN SHAB6
+<Multi_key> <c> <s> <h> <a> <r> <2> : "𒊹"   # CUNEIFORM SIGN SHAR2
+<Multi_key> <c> <s> <h> <e> : "𒊺"   # CUNEIFORM SIGN SHE
+<Multi_key> <c> <s> <h> <e> <h> <u> : "𒊻"   # CUNEIFORM SIGN SHE HU
+<Multi_key> <c> <s> <h> <e> <o> <v> <e> <r> <s> <h> <e> <g> <a> <d> <o> <v> <e> <r> <g> <a> <d> <g> <a> <r> <o> <v> <e> <r> <g> <a> <r> : "𒊼"   # CUNEIFORM SIGN SHE OVER SHE GAD OVER GAD GAR OVER GAR
+<Multi_key> <c> <s> <h> <e> <o> <v> <e> <r> <s> <h> <e> <t> <a> <b> <o> <v> <e> <r> <t> <a> <b> <g> <a> <r> <o> <v> <e> <r> <g> <a> <r> : "𒊽"   # CUNEIFORM SIGN SHE OVER SHE TAB OVER TAB GAR OVER GAR
+<Multi_key> <c> <s> <h> <e> <g> <9> : "𒊾"   # CUNEIFORM SIGN SHEG9
+<Multi_key> <c> <s> <h> <e> <n> : "𒊿"   # CUNEIFORM SIGN SHEN
+<Multi_key> <c> <s> <h> <e> <s> <h> : "𒋀"   # CUNEIFORM SIGN SHESH
+<Multi_key> <c> <s> <h> <e> <s> <h> <2> : "𒋁"   # CUNEIFORM SIGN SHESH2
+<Multi_key> <c> <s> <h> <e> <s> <h> <l> <a> <m> : "𒋂"   # CUNEIFORM SIGN SHESHLAM
+<Multi_key> <c> <s> <h> <i> <d> : "𒋃"   # CUNEIFORM SIGN SHID
+<Multi_key> <c> <s> <h> <i> <d> <t> <i> <m> <e> <s> <a> : "𒋄"   # CUNEIFORM SIGN SHID TIMES A
+<Multi_key> <c> <s> <h> <i> <d> <t> <i> <m> <e> <s> <i> <m> : "𒋅"   # CUNEIFORM SIGN SHID TIMES IM
+<Multi_key> <c> <s> <h> <i> <m> : "𒋆"   # CUNEIFORM SIGN SHIM
+<Multi_key> <c> <s> <h> <i> <m> <t> <i> <m> <e> <s> <a> : "𒋇"   # CUNEIFORM SIGN SHIM TIMES A
+<Multi_key> <c> <s> <h> <i> <m> <t> <i> <m> <e> <s> <b> <a> <l> : "𒋈"   # CUNEIFORM SIGN SHIM TIMES BAL
+<Multi_key> <c> <s> <h> <i> <m> <t> <i> <m> <e> <s> <b> <u> <l> <u> <g> : "𒋉"   # CUNEIFORM SIGN SHIM TIMES BULUG
+<Multi_key> <c> <s> <h> <i> <m> <t> <i> <m> <e> <s> <d> <i> <n> : "𒋊"   # CUNEIFORM SIGN SHIM TIMES DIN
+<Multi_key> <c> <s> <h> <i> <m> <t> <i> <m> <e> <s> <g> <a> <r> : "𒋋"   # CUNEIFORM SIGN SHIM TIMES GAR
+<Multi_key> <c> <s> <h> <i> <m> <t> <i> <m> <e> <s> <i> <g> <i> : "𒋌"   # CUNEIFORM SIGN SHIM TIMES IGI
+<Multi_key> <c> <s> <h> <i> <m> <t> <i> <m> <e> <s> <i> <g> <i> <g> <u> <n> <u> : "𒋍"   # CUNEIFORM SIGN SHIM TIMES IGI GUNU
+<Multi_key> <c> <s> <h> <i> <m> <t> <i> <m> <e> <s> <k> <u> <s> <h> <u> <2> : "𒋎"   # CUNEIFORM SIGN SHIM TIMES KUSHU2
+<Multi_key> <c> <s> <h> <i> <m> <t> <i> <m> <e> <s> <l> <u> <l> : "𒋏"   # CUNEIFORM SIGN SHIM TIMES LUL
+<Multi_key> <c> <s> <h> <i> <m> <t> <i> <m> <e> <s> <m> <u> <g> : "𒋐"   # CUNEIFORM SIGN SHIM TIMES MUG
+<Multi_key> <c> <s> <h> <i> <m> <t> <i> <m> <e> <s> <s> <a> <l> : "𒋑"   # CUNEIFORM SIGN SHIM TIMES SAL
+<Multi_key> <c> <s> <h> <i> <n> <i> <g> : "𒋒"   # CUNEIFORM SIGN SHINIG
+<Multi_key> <c> <s> <h> <i> <r> : "𒋓"   # CUNEIFORM SIGN SHIR
+<Multi_key> <c> <s> <h> <i> <r> <t> <e> <n> <u> : "𒋔"   # CUNEIFORM SIGN SHIR TENU
+<Multi_key> <c> <s> <h> <i> <r> <o> <v> <e> <r> <s> <h> <i> <r> <b> <u> <r> <o> <v> <e> <r> <b> <u> <r> : "𒋕"   # CUNEIFORM SIGN SHIR OVER SHIR BUR OVER BUR
+<Multi_key> <c> <s> <h> <i> <t> <a> : "𒋖"   # CUNEIFORM SIGN SHITA
+<Multi_key> <c> <s> <h> <u> : "𒋗"   # CUNEIFORM SIGN SHU
+<Multi_key> <c> <s> <h> <u> <o> <v> <e> <r> <i> <n> <v> <e> <r> <t> <e> <d> <s> <h> <u> : "𒋘"   # CUNEIFORM SIGN SHU OVER INVERTED SHU
+<Multi_key> <c> <s> <h> <u> <2> : "𒋙"   # CUNEIFORM SIGN SHU2
+<Multi_key> <c> <s> <h> <u> <b> <u> <r> : "𒋚"   # CUNEIFORM SIGN SHUBUR
+<Multi_key> <c> <s> <i> : "𒋛"   # CUNEIFORM SIGN SI
+<Multi_key> <c> <s> <i> <g> <u> <n> <u> : "𒋜"   # CUNEIFORM SIGN SI GUNU
+<Multi_key> <c> <s> <i> <g> : "𒋝"   # CUNEIFORM SIGN SIG
+<Multi_key> <c> <s> <i> <g> <4> : "𒋞"   # CUNEIFORM SIGN SIG4
+<Multi_key> <c> <s> <i> <g> <4> <o> <v> <e> <r> <s> <i> <g> <4> <s> <h> <u> <2> : "𒋟"   # CUNEIFORM SIGN SIG4 OVER SIG4 SHU2
+<Multi_key> <c> <s> <i> <k> <2> : "𒋠"   # CUNEIFORM SIGN SIK2
+<Multi_key> <c> <s> <i> <l> <a> <3> : "𒋡"   # CUNEIFORM SIGN SILA3
+<Multi_key> <c> <s> <u> : "𒋢"   # CUNEIFORM SIGN SU
+<Multi_key> <c> <s> <u> <o> <v> <e> <r> <s> <u> : "𒋣"   # CUNEIFORM SIGN SU OVER SU
+<Multi_key> <c> <s> <u> <d> : "𒋤"   # CUNEIFORM SIGN SUD
+<Multi_key> <c> <s> <u> <d> <2> : "𒋥"   # CUNEIFORM SIGN SUD2
+<Multi_key> <c> <s> <u> <h> <u> <r> : "𒋦"   # CUNEIFORM SIGN SUHUR
+<Multi_key> <c> <s> <u> <m> : "𒋧"   # CUNEIFORM SIGN SUM
+<Multi_key> <c> <s> <u> <m> <a> <s> <h> : "𒋨"   # CUNEIFORM SIGN SUMASH
+<Multi_key> <c> <s> <u> <r> : "𒋩"   # CUNEIFORM SIGN SUR
+<Multi_key> <c> <s> <u> <r> <9> : "𒋪"   # CUNEIFORM SIGN SUR9
+<Multi_key> <c> <t> <a> : "𒋫"   # CUNEIFORM SIGN TA
+<Multi_key> <c> <t> <a> <a> <s> <t> <e> <r> <i> <s> <k> : "𒋬"   # CUNEIFORM SIGN TA ASTERISK
+<Multi_key> <c> <t> <a> <t> <i> <m> <e> <s> <h> <i> : "𒋭"   # CUNEIFORM SIGN TA TIMES HI
+<Multi_key> <c> <t> <a> <t> <i> <m> <e> <s> <m> <i> : "𒋮"   # CUNEIFORM SIGN TA TIMES MI
+<Multi_key> <c> <t> <a> <g> <u> <n> <u> : "𒋯"   # CUNEIFORM SIGN TA GUNU
+<Multi_key> <c> <t> <a> <b> : "𒋰"   # CUNEIFORM SIGN TAB
+<Multi_key> <c> <t> <a> <b> <o> <v> <e> <r> <t> <a> <b> <n> <i> <o> <v> <e> <r> <n> <i> <d> <i> <s> <h> <o> <v> <e> <r> <d> <i> <s> <h> : "𒋱"   # CUNEIFORM SIGN TAB OVER TAB NI OVER NI DISH OVER DISH
+<Multi_key> <c> <t> <a> <b> <s> <q> <u> <a> <r> <e> <d> : "𒋲"   # CUNEIFORM SIGN TAB SQUARED
+<Multi_key> <c> <t> <a> <g> : "𒋳"   # CUNEIFORM SIGN TAG
+<Multi_key> <c> <t> <a> <g> <t> <i> <m> <e> <s> <b> <i> : "𒋴"   # CUNEIFORM SIGN TAG TIMES BI
+<Multi_key> <c> <t> <a> <g> <t> <i> <m> <e> <s> <g> <u> <d> : "𒋵"   # CUNEIFORM SIGN TAG TIMES GUD
+<Multi_key> <c> <t> <a> <g> <t> <i> <m> <e> <s> <s> <h> <e> : "𒋶"   # CUNEIFORM SIGN TAG TIMES SHE
+<Multi_key> <c> <t> <a> <g> <t> <i> <m> <e> <s> <s> <h> <u> : "𒋷"   # CUNEIFORM SIGN TAG TIMES SHU
+<Multi_key> <c> <t> <a> <g> <t> <i> <m> <e> <s> <t> <u> <g> <2> : "𒋸"   # CUNEIFORM SIGN TAG TIMES TUG2
+<Multi_key> <c> <t> <a> <g> <t> <i> <m> <e> <s> <u> <d> : "𒋹"   # CUNEIFORM SIGN TAG TIMES UD
+<Multi_key> <c> <t> <a> <k> <4> : "𒋺"   # CUNEIFORM SIGN TAK4
+<Multi_key> <c> <t> <a> <r> : "𒋻"   # CUNEIFORM SIGN TAR
+<Multi_key> <c> <t> <e> : "𒋼"   # CUNEIFORM SIGN TE
+<Multi_key> <c> <t> <e> <g> <u> <n> <u> : "𒋽"   # CUNEIFORM SIGN TE GUNU
+<Multi_key> <c> <t> <i> : "𒋾"   # CUNEIFORM SIGN TI
+<Multi_key> <c> <t> <i> <t> <e> <n> <u> : "𒋿"   # CUNEIFORM SIGN TI TENU
+<Multi_key> <c> <t> <i> <l> : "𒌀"   # CUNEIFORM SIGN TIL
+<Multi_key> <c> <t> <i> <r> : "𒌁"   # CUNEIFORM SIGN TIR
+<Multi_key> <c> <t> <i> <r> <t> <i> <m> <e> <s> <t> <a> <k> <4> : "𒌂"   # CUNEIFORM SIGN TIR TIMES TAK4
+<Multi_key> <c> <t> <i> <r> <o> <v> <e> <r> <t> <i> <r> : "𒌃"   # CUNEIFORM SIGN TIR OVER TIR
+<Multi_key> <c> <t> <i> <r> <o> <v> <e> <r> <t> <i> <r> <g> <a> <d> <o> <v> <e> <r> <g> <a> <d> <g> <a> <r> <o> <v> <e> <r> <g> <a> <r> : "𒌄"   # CUNEIFORM SIGN TIR OVER TIR GAD OVER GAD GAR OVER GAR
+<Multi_key> <c> <t> <u> : "𒌅"   # CUNEIFORM SIGN TU
+<Multi_key> <c> <t> <u> <g> <2> : "𒌆"   # CUNEIFORM SIGN TUG2
+<Multi_key> <c> <t> <u> <k> : "𒌇"   # CUNEIFORM SIGN TUK
+<Multi_key> <c> <t> <u> <m> : "𒌈"   # CUNEIFORM SIGN TUM
+<Multi_key> <c> <t> <u> <r> : "𒌉"   # CUNEIFORM SIGN TUR
+<Multi_key> <c> <t> <u> <r> <o> <v> <e> <r> <t> <u> <r> <z> <a> <o> <v> <e> <r> <z> <a> : "𒌊"   # CUNEIFORM SIGN TUR OVER TUR ZA OVER ZA
+<Multi_key> <c> <u> : "𒌋"   # CUNEIFORM SIGN U
+<Multi_key> <c> <u> <g> <u> <d> : "𒌌"   # CUNEIFORM SIGN U GUD
+<Multi_key> <c> <u> <u> <u> : "𒌍"   # CUNEIFORM SIGN U U U
+<Multi_key> <c> <u> <o> <v> <e> <r> <u> <p> <a> <o> <v> <e> <r> <p> <a> <g> <a> <r> <o> <v> <e> <r> <g> <a> <r> : "𒌎"   # CUNEIFORM SIGN U OVER U PA OVER PA GAR OVER GAR
+<Multi_key> <c> <u> <o> <v> <e> <r> <u> <s> <u> <r> <o> <v> <e> <r> <s> <u> <r> : "𒌏"   # CUNEIFORM SIGN U OVER U SUR OVER SUR
+<Multi_key> <c> <u> <o> <v> <e> <r> <u> <u> <r> <e> <v> <e> <r> <s> <e> <d> <o> <v> <e> <r> <u> <r> <e> <v> <e> <r> <s> <e> <d> : "𒌐"   # CUNEIFORM SIGN U OVER U U REVERSED OVER U REVERSED
+<Multi_key> <c> <u> <2> : "𒌑"   # CUNEIFORM SIGN U2
+<Multi_key> <c> <u> <b> : "𒌒"   # CUNEIFORM SIGN UB
+<Multi_key> <c> <u> <d> : "𒌓"   # CUNEIFORM SIGN UD
+<Multi_key> <c> <u> <d> <k> <u> <s> <h> <u> <2> : "𒌔"   # CUNEIFORM SIGN UD KUSHU2
+<Multi_key> <c> <u> <d> <t> <i> <m> <e> <s> <b> <a> <d> : "𒌕"   # CUNEIFORM SIGN UD TIMES BAD
+<Multi_key> <c> <u> <d> <t> <i> <m> <e> <s> <m> <i> : "𒌖"   # CUNEIFORM SIGN UD TIMES MI
+<Multi_key> <c> <u> <d> <t> <i> <m> <e> <s> <u> <p> <l> <u> <s> <u> <p> <l> <u> <s> <u> : "𒌗"   # CUNEIFORM SIGN UD TIMES U PLUS U PLUS U
+<Multi_key> <c> <u> <d> <t> <i> <m> <e> <s> <u> <p> <l> <u> <s> <u> <p> <l> <u> <s> <u> <g> <u> <n> <u> : "𒌘"   # CUNEIFORM SIGN UD TIMES U PLUS U PLUS U GUNU
+<Multi_key> <c> <u> <d> <g> <u> <n> <u> : "𒌙"   # CUNEIFORM SIGN UD GUNU
+<Multi_key> <c> <u> <d> <s> <h> <e> <s> <h> <i> <g> : "𒌚"   # CUNEIFORM SIGN UD SHESHIG
+<Multi_key> <c> <u> <d> <s> <h> <e> <s> <h> <i> <g> <t> <i> <m> <e> <s> <b> <a> <d> : "𒌛"   # CUNEIFORM SIGN UD SHESHIG TIMES BAD
+<Multi_key> <c> <u> <d> <u> <g> : "𒌜"   # CUNEIFORM SIGN UDUG
+<Multi_key> <c> <u> <m> : "𒌝"   # CUNEIFORM SIGN UM
+<Multi_key> <c> <u> <m> <t> <i> <m> <e> <s> <l> <a> <g> <a> <b> : "𒌞"   # CUNEIFORM SIGN UM TIMES LAGAB
+<Multi_key> <c> <u> <m> <t> <i> <m> <e> <s> <m> <e> <p> <l> <u> <s> <d> <a> : "𒌟"   # CUNEIFORM SIGN UM TIMES ME PLUS DA
+<Multi_key> <c> <u> <m> <t> <i> <m> <e> <s> <s> <h> <a> <3> : "𒌠"   # CUNEIFORM SIGN UM TIMES SHA3
+<Multi_key> <c> <u> <m> <t> <i> <m> <e> <s> <u> : "𒌡"   # CUNEIFORM SIGN UM TIMES U
+<Multi_key> <c> <u> <m> <b> <i> <n> : "𒌢"   # CUNEIFORM SIGN UMBIN
+<Multi_key> <c> <u> <m> <u> <m> : "𒌣"   # CUNEIFORM SIGN UMUM
+<Multi_key> <c> <u> <m> <u> <m> <t> <i> <m> <e> <s> <k> <a> <s> <k> <a> <l> : "𒌤"   # CUNEIFORM SIGN UMUM TIMES KASKAL
+<Multi_key> <c> <u> <m> <u> <m> <t> <i> <m> <e> <s> <p> <a> : "𒌥"   # CUNEIFORM SIGN UMUM TIMES PA
+<Multi_key> <c> <u> <n> : "𒌦"   # CUNEIFORM SIGN UN
+<Multi_key> <c> <u> <n> <g> <u> <n> <u> : "𒌧"   # CUNEIFORM SIGN UN GUNU
+<Multi_key> <c> <u> <r> : "𒌨"   # CUNEIFORM SIGN UR
+<Multi_key> <c> <u> <r> <c> <r> <o> <s> <s> <i> <n> <g> <u> <r> : "𒌩"   # CUNEIFORM SIGN UR CROSSING UR
+<Multi_key> <c> <u> <r> <s> <h> <e> <s> <h> <i> <g> : "𒌪"   # CUNEIFORM SIGN UR SHESHIG
+<Multi_key> <c> <u> <r> <2> : "𒌫"   # CUNEIFORM SIGN UR2
+<Multi_key> <c> <u> <r> <2> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <h> <a> : "𒌬"   # CUNEIFORM SIGN UR2 TIMES A PLUS HA
+<Multi_key> <c> <u> <r> <2> <t> <i> <m> <e> <s> <a> <p> <l> <u> <s> <n> <a> : "𒌭"   # CUNEIFORM SIGN UR2 TIMES A PLUS NA
+<Multi_key> <c> <u> <r> <2> <t> <i> <m> <e> <s> <a> <l> : "𒌮"   # CUNEIFORM SIGN UR2 TIMES AL
+<Multi_key> <c> <u> <r> <2> <t> <i> <m> <e> <s> <h> <a> : "𒌯"   # CUNEIFORM SIGN UR2 TIMES HA
+<Multi_key> <c> <u> <r> <2> <t> <i> <m> <e> <s> <n> <u> <n> : "𒌰"   # CUNEIFORM SIGN UR2 TIMES NUN
+<Multi_key> <c> <u> <r> <2> <t> <i> <m> <e> <s> <u> <2> : "𒌱"   # CUNEIFORM SIGN UR2 TIMES U2
+<Multi_key> <c> <u> <r> <2> <t> <i> <m> <e> <s> <u> <2> <p> <l> <u> <s> <a> <s> <h> : "𒌲"   # CUNEIFORM SIGN UR2 TIMES U2 PLUS ASH
+<Multi_key> <c> <u> <r> <2> <t> <i> <m> <e> <s> <u> <2> <p> <l> <u> <s> <b> <i> : "𒌳"   # CUNEIFORM SIGN UR2 TIMES U2 PLUS BI
+<Multi_key> <c> <u> <r> <4> : "𒌴"   # CUNEIFORM SIGN UR4
+<Multi_key> <c> <u> <r> <i> : "𒌵"   # CUNEIFORM SIGN URI
+<Multi_key> <c> <u> <r> <i> <3> : "𒌶"   # CUNEIFORM SIGN URI3
+<Multi_key> <c> <u> <r> <u> : "𒌷"   # CUNEIFORM SIGN URU
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <a> : "𒌸"   # CUNEIFORM SIGN URU TIMES A
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <a> <s> <h> <g> <a> <b> : "𒌹"   # CUNEIFORM SIGN URU TIMES ASHGAB
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <b> <a> <r> : "𒌺"   # CUNEIFORM SIGN URU TIMES BAR
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <d> <u> <n> : "𒌻"   # CUNEIFORM SIGN URU TIMES DUN
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <g> <a> : "𒌼"   # CUNEIFORM SIGN URU TIMES GA
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <g> <a> <l> : "𒌽"   # CUNEIFORM SIGN URU TIMES GAL
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <g> <a> <n> <2> <t> <e> <n> <u> : "𒌾"   # CUNEIFORM SIGN URU TIMES GAN2 TENU
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <g> <a> <r> : "𒌿"   # CUNEIFORM SIGN URU TIMES GAR
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <g> <u> : "𒍀"   # CUNEIFORM SIGN URU TIMES GU
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <h> <a> : "𒍁"   # CUNEIFORM SIGN URU TIMES HA
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <i> <g> <i> : "𒍂"   # CUNEIFORM SIGN URU TIMES IGI
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <i> <m> : "𒍃"   # CUNEIFORM SIGN URU TIMES IM
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <i> <s> <h> : "𒍄"   # CUNEIFORM SIGN URU TIMES ISH
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <k> <i> : "𒍅"   # CUNEIFORM SIGN URU TIMES KI
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <l> <u> <m> : "𒍆"   # CUNEIFORM SIGN URU TIMES LUM
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <m> <i> <n> : "𒍇"   # CUNEIFORM SIGN URU TIMES MIN
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <p> <a> : "𒍈"   # CUNEIFORM SIGN URU TIMES PA
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <s> <h> <e> : "𒍉"   # CUNEIFORM SIGN URU TIMES SHE
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <s> <i> <g> <4> : "𒍊"   # CUNEIFORM SIGN URU TIMES SIG4
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <t> <u> : "𒍋"   # CUNEIFORM SIGN URU TIMES TU
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <u> <p> <l> <u> <s> <g> <u> <d> : "𒍌"   # CUNEIFORM SIGN URU TIMES U PLUS GUD
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <u> <d> : "𒍍"   # CUNEIFORM SIGN URU TIMES UD
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <u> <r> <u> <d> <a> : "𒍎"   # CUNEIFORM SIGN URU TIMES URUDA
+<Multi_key> <c> <u> <r> <u> <d> <a> : "𒍏"   # CUNEIFORM SIGN URUDA
+<Multi_key> <c> <u> <r> <u> <d> <a> <t> <i> <m> <e> <s> <u> : "𒍐"   # CUNEIFORM SIGN URUDA TIMES U
+<Multi_key> <c> <u> <s> <h> : "𒍑"   # CUNEIFORM SIGN USH
+<Multi_key> <c> <u> <s> <h> <t> <i> <m> <e> <s> <a> : "𒍒"   # CUNEIFORM SIGN USH TIMES A
+<Multi_key> <c> <u> <s> <h> <t> <i> <m> <e> <s> <k> <u> : "𒍓"   # CUNEIFORM SIGN USH TIMES KU
+<Multi_key> <c> <u> <s> <h> <t> <i> <m> <e> <s> <k> <u> <r> : "𒍔"   # CUNEIFORM SIGN USH TIMES KUR
+<Multi_key> <c> <u> <s> <h> <t> <i> <m> <e> <s> <t> <a> <k> <4> : "𒍕"   # CUNEIFORM SIGN USH TIMES TAK4
+<Multi_key> <c> <u> <s> <h> <x> : "𒍖"   # CUNEIFORM SIGN USHX
+<Multi_key> <c> <u> <s> <h> <2> : "𒍗"   # CUNEIFORM SIGN USH2
+<Multi_key> <c> <u> <s> <h> <u> <m> <x> : "𒍘"   # CUNEIFORM SIGN USHUMX
+<Multi_key> <c> <u> <t> <u> <k> <i> : "𒍙"   # CUNEIFORM SIGN UTUKI
+<Multi_key> <c> <u> <z> <3> : "𒍚"   # CUNEIFORM SIGN UZ3
+<Multi_key> <c> <u> <z> <3> <t> <i> <m> <e> <s> <k> <a> <s> <k> <a> <l> : "𒍛"   # CUNEIFORM SIGN UZ3 TIMES KASKAL
+<Multi_key> <c> <u> <z> <u> : "𒍜"   # CUNEIFORM SIGN UZU
+<Multi_key> <c> <z> <a> : "𒍝"   # CUNEIFORM SIGN ZA
+<Multi_key> <c> <z> <a> <t> <e> <n> <u> : "𒍞"   # CUNEIFORM SIGN ZA TENU
+<Multi_key> <c> <z> <a> <s> <q> <u> <a> <r> <e> <d> <t> <i> <m> <e> <s> <k> <u> <r> : "𒍟"   # CUNEIFORM SIGN ZA SQUARED TIMES KUR
+<Multi_key> <c> <z> <a> <g> : "𒍠"   # CUNEIFORM SIGN ZAG
+<Multi_key> <c> <z> <a> <m> <x> : "𒍡"   # CUNEIFORM SIGN ZAMX
+<Multi_key> <c> <z> <e> <2> : "𒍢"   # CUNEIFORM SIGN ZE2
+<Multi_key> <c> <z> <i> : "𒍣"   # CUNEIFORM SIGN ZI
+<Multi_key> <c> <z> <i> <o> <v> <e> <r> <z> <i> : "𒍤"   # CUNEIFORM SIGN ZI OVER ZI
+<Multi_key> <c> <z> <i> <3> : "𒍥"   # CUNEIFORM SIGN ZI3
+<Multi_key> <c> <z> <i> <b> : "𒍦"   # CUNEIFORM SIGN ZIB
+<Multi_key> <c> <z> <i> <b> <k> <a> <b> <a> <t> <e> <n> <u> : "𒍧"   # CUNEIFORM SIGN ZIB KABA TENU
+<Multi_key> <c> <z> <i> <g> : "𒍨"   # CUNEIFORM SIGN ZIG
+<Multi_key> <c> <z> <i> <z> <2> : "𒍩"   # CUNEIFORM SIGN ZIZ2
+<Multi_key> <c> <z> <u> : "𒍪"   # CUNEIFORM SIGN ZU
+<Multi_key> <c> <z> <u> <5> : "𒍫"   # CUNEIFORM SIGN ZU5
+<Multi_key> <c> <z> <u> <5> <t> <i> <m> <e> <s> <a> : "𒍬"   # CUNEIFORM SIGN ZU5 TIMES A
+<Multi_key> <c> <z> <u> <b> <u> <r> : "𒍭"   # CUNEIFORM SIGN ZUBUR
+<Multi_key> <c> <z> <u> <m> : "𒍮"   # CUNEIFORM SIGN ZUM
+<Multi_key> <c> <k> <a> <p> <e> <l> <a> <m> <i> <t> <e> : "𒍯"   # CUNEIFORM SIGN KAP ELAMITE
+<Multi_key> <c> <a> <b> <t> <i> <m> <e> <s> <n> <u> <n> : "𒍰"   # CUNEIFORM SIGN AB TIMES NUN
+<Multi_key> <c> <a> <b> <2> <t> <i> <m> <e> <s> <a> : "𒍱"   # CUNEIFORM SIGN AB2 TIMES A
+<Multi_key> <c> <a> <m> <a> <r> <t> <i> <m> <e> <s> <k> <u> <g> : "𒍲"   # CUNEIFORM SIGN AMAR TIMES KUG
+<Multi_key> <c> <d> <a> <g> <k> <i> <s> <i> <m> <5> <t> <i> <m> <e> <s> <u> <2> <p> <l> <u> <s> <m> <a> <s> <h> : "𒍳"   # CUNEIFORM SIGN DAG KISIM5 TIMES U2 PLUS MASH
+<Multi_key> <c> <d> <a> <g> <3> : "𒍴"   # CUNEIFORM SIGN DAG3
+<Multi_key> <c> <d> <i> <s> <h> <p> <l> <u> <s> <s> <h> <u> : "𒍵"   # CUNEIFORM SIGN DISH PLUS SHU
+<Multi_key> <c> <d> <u> <b> <t> <i> <m> <e> <s> <s> <h> <e> : "𒍶"   # CUNEIFORM SIGN DUB TIMES SHE
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <g> <u> <d> : "𒍷"   # CUNEIFORM SIGN EZEN TIMES GUD
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <s> <h> <e> : "𒍸"   # CUNEIFORM SIGN EZEN TIMES SHE
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <a> <n> <p> <l> <u> <s> <k> <a> <k> <p> <l> <u> <s> <a> : "𒍹"   # CUNEIFORM SIGN GA2 TIMES AN PLUS KAK PLUS A
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <a> <s> <h> <2> : "𒍺"   # CUNEIFORM SIGN GA2 TIMES ASH2
+<Multi_key> <c> <g> <e> <2> <2> : "𒍻"   # CUNEIFORM SIGN GE22
+<Multi_key> <c> <g> <i> <g> : "𒍼"   # CUNEIFORM SIGN GIG
+<Multi_key> <c> <h> <u> <s> <h> : "𒍽"   # CUNEIFORM SIGN HUSH
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <a> <n> <s> <h> <e> : "𒍾"   # CUNEIFORM SIGN KA TIMES ANSHE
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <a> <s> <h> <3> : "𒍿"   # CUNEIFORM SIGN KA TIMES ASH3
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <g> <i> <s> <h> : "𒎀"   # CUNEIFORM SIGN KA TIMES GISH
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <g> <u> <d> : "𒎁"   # CUNEIFORM SIGN KA TIMES GUD
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <h> <i> <t> <i> <m> <e> <s> <a> <s> <h> <2> : "𒎂"   # CUNEIFORM SIGN KA TIMES HI TIMES ASH2
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <l> <u> <m> : "𒎃"   # CUNEIFORM SIGN KA TIMES LUM
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <p> <a> : "𒎄"   # CUNEIFORM SIGN KA TIMES PA
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <s> <h> <u> <l> : "𒎅"   # CUNEIFORM SIGN KA TIMES SHUL
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <t> <u> : "𒎆"   # CUNEIFORM SIGN KA TIMES TU
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <u> <r> <2> : "𒎇"   # CUNEIFORM SIGN KA TIMES UR2
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <g> <i> : "𒎈"   # CUNEIFORM SIGN LAGAB TIMES GI
+<Multi_key> <c> <l> <u> <2> <s> <h> <e> <s> <h> <i> <g> <t> <i> <m> <e> <s> <b> <a> <d> : "𒎉"   # CUNEIFORM SIGN LU2 SHESHIG TIMES BAD
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <e> <s> <h> <2> <p> <l> <u> <s> <l> <a> <l> : "𒎊"   # CUNEIFORM SIGN LU2 TIMES ESH2 PLUS LAL
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <s> <h> <u> : "𒎋"   # CUNEIFORM SIGN LU2 TIMES SHU
+<Multi_key> <c> <m> <e> <s> <h> : "𒎌"   # CUNEIFORM SIGN MESH
+<Multi_key> <c> <m> <u> <s> <h> <3> <t> <i> <m> <e> <s> <z> <a> : "𒎍"   # CUNEIFORM SIGN MUSH3 TIMES ZA
+<Multi_key> <c> <n> <a> <4> : "𒎎"   # CUNEIFORM SIGN NA4
+<Multi_key> <c> <n> <i> <n> : "𒎏"   # CUNEIFORM SIGN NIN
+<Multi_key> <c> <n> <i> <n> <9> : "𒎐"   # CUNEIFORM SIGN NIN9
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <b> <a> <l> : "𒎑"   # CUNEIFORM SIGN NINDA2 TIMES BAL
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <g> <i> : "𒎒"   # CUNEIFORM SIGN NINDA2 TIMES GI
+<Multi_key> <c> <n> <u> <1> <1> <r> <o> <t> <a> <t> <e> <d> <n> <i> <n> <e> <t> <y> <d> <e> <g> <r> <e> <e> <s> : "𒎓"   # CUNEIFORM SIGN NU11 ROTATED NINETY DEGREES
+<Multi_key> <c> <p> <e> <s> <h> <2> <a> <s> <t> <e> <r> <i> <s> <k> : "𒎔"   # CUNEIFORM SIGN PESH2 ASTERISK
+<Multi_key> <c> <p> <i> <r> <2> : "𒎕"   # CUNEIFORM SIGN PIR2
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <i> <g> <i> <g> <u> <n> <u> : "𒎖"   # CUNEIFORM SIGN SAG TIMES IGI GUNU
+<Multi_key> <c> <t> <i> <2> : "𒎗"   # CUNEIFORM SIGN TI2
+<Multi_key> <c> <u> <m> <t> <i> <m> <e> <s> <m> <e> : "𒎘"   # CUNEIFORM SIGN UM TIMES ME
+<Multi_key> <c> <u> <u> : "𒎙"   # CUNEIFORM SIGN U U
+<Multi_key> <c> <t> <w> <o> <a> <s> <h> : "𒐀"   # CUNEIFORM NUMERIC SIGN TWO ASH
+<Multi_key> <c> <t> <h> <r> <e> <e> <a> <s> <h> : "𒐁"   # CUNEIFORM NUMERIC SIGN THREE ASH
+<Multi_key> <c> <f> <o> <u> <r> <a> <s> <h> : "𒐂"   # CUNEIFORM NUMERIC SIGN FOUR ASH
+<Multi_key> <c> <f> <i> <v> <e> <a> <s> <h> : "𒐃"   # CUNEIFORM NUMERIC SIGN FIVE ASH
+<Multi_key> <c> <s> <i> <x> <a> <s> <h> : "𒐄"   # CUNEIFORM NUMERIC SIGN SIX ASH
+<Multi_key> <c> <s> <e> <v> <e> <n> <a> <s> <h> : "𒐅"   # CUNEIFORM NUMERIC SIGN SEVEN ASH
+<Multi_key> <c> <e> <i> <g> <h> <t> <a> <s> <h> : "𒐆"   # CUNEIFORM NUMERIC SIGN EIGHT ASH
+<Multi_key> <c> <n> <i> <n> <e> <a> <s> <h> : "𒐇"   # CUNEIFORM NUMERIC SIGN NINE ASH
+<Multi_key> <c> <t> <h> <r> <e> <e> <d> <i> <s> <h> : "𒐈"   # CUNEIFORM NUMERIC SIGN THREE DISH
+<Multi_key> <c> <f> <o> <u> <r> <d> <i> <s> <h> : "𒐉"   # CUNEIFORM NUMERIC SIGN FOUR DISH
+<Multi_key> <c> <f> <i> <v> <e> <d> <i> <s> <h> : "𒐊"   # CUNEIFORM NUMERIC SIGN FIVE DISH
+<Multi_key> <c> <s> <i> <x> <d> <i> <s> <h> : "𒐋"   # CUNEIFORM NUMERIC SIGN SIX DISH
+<Multi_key> <c> <s> <e> <v> <e> <n> <d> <i> <s> <h> : "𒐌"   # CUNEIFORM NUMERIC SIGN SEVEN DISH
+<Multi_key> <c> <e> <i> <g> <h> <t> <d> <i> <s> <h> : "𒐍"   # CUNEIFORM NUMERIC SIGN EIGHT DISH
+<Multi_key> <c> <n> <i> <n> <e> <d> <i> <s> <h> : "𒐎"   # CUNEIFORM NUMERIC SIGN NINE DISH
+<Multi_key> <c> <f> <o> <u> <r> <u> : "𒐏"   # CUNEIFORM NUMERIC SIGN FOUR U
+<Multi_key> <c> <f> <i> <v> <e> <u> : "𒐐"   # CUNEIFORM NUMERIC SIGN FIVE U
+<Multi_key> <c> <s> <i> <x> <u> : "𒐑"   # CUNEIFORM NUMERIC SIGN SIX U
+<Multi_key> <c> <s> <e> <v> <e> <n> <u> : "𒐒"   # CUNEIFORM NUMERIC SIGN SEVEN U
+<Multi_key> <c> <e> <i> <g> <h> <t> <u> : "𒐓"   # CUNEIFORM NUMERIC SIGN EIGHT U
+<Multi_key> <c> <n> <i> <n> <e> <u> : "𒐔"   # CUNEIFORM NUMERIC SIGN NINE U
+<Multi_key> <c> <o> <n> <e> <g> <e> <s> <h> <2> : "𒐕"   # CUNEIFORM NUMERIC SIGN ONE GESH2
+<Multi_key> <c> <t> <w> <o> <g> <e> <s> <h> <2> : "𒐖"   # CUNEIFORM NUMERIC SIGN TWO GESH2
+<Multi_key> <c> <t> <h> <r> <e> <e> <g> <e> <s> <h> <2> : "𒐗"   # CUNEIFORM NUMERIC SIGN THREE GESH2
+<Multi_key> <c> <f> <o> <u> <r> <g> <e> <s> <h> <2> : "𒐘"   # CUNEIFORM NUMERIC SIGN FOUR GESH2
+<Multi_key> <c> <f> <i> <v> <e> <g> <e> <s> <h> <2> : "𒐙"   # CUNEIFORM NUMERIC SIGN FIVE GESH2
+<Multi_key> <c> <s> <i> <x> <g> <e> <s> <h> <2> : "𒐚"   # CUNEIFORM NUMERIC SIGN SIX GESH2
+<Multi_key> <c> <s> <e> <v> <e> <n> <g> <e> <s> <h> <2> : "𒐛"   # CUNEIFORM NUMERIC SIGN SEVEN GESH2
+<Multi_key> <c> <e> <i> <g> <h> <t> <g> <e> <s> <h> <2> : "𒐜"   # CUNEIFORM NUMERIC SIGN EIGHT GESH2
+<Multi_key> <c> <n> <i> <n> <e> <g> <e> <s> <h> <2> : "𒐝"   # CUNEIFORM NUMERIC SIGN NINE GESH2
+<Multi_key> <c> <o> <n> <e> <g> <e> <s> <h> <u> : "𒐞"   # CUNEIFORM NUMERIC SIGN ONE GESHU
+<Multi_key> <c> <t> <w> <o> <g> <e> <s> <h> <u> : "𒐟"   # CUNEIFORM NUMERIC SIGN TWO GESHU
+<Multi_key> <c> <t> <h> <r> <e> <e> <g> <e> <s> <h> <u> : "𒐠"   # CUNEIFORM NUMERIC SIGN THREE GESHU
+<Multi_key> <c> <f> <o> <u> <r> <g> <e> <s> <h> <u> : "𒐡"   # CUNEIFORM NUMERIC SIGN FOUR GESHU
+<Multi_key> <c> <f> <i> <v> <e> <g> <e> <s> <h> <u> : "𒐢"   # CUNEIFORM NUMERIC SIGN FIVE GESHU
+<Multi_key> <c> <t> <w> <o> <s> <h> <a> <r> <2> : "𒐣"   # CUNEIFORM NUMERIC SIGN TWO SHAR2
+<Multi_key> <c> <t> <h> <r> <e> <e> <s> <h> <a> <r> <2> : "𒐤"   # CUNEIFORM NUMERIC SIGN THREE SHAR2
+<Multi_key> <c> <t> <h> <r> <e> <e> <s> <h> <a> <r> <2> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> : "𒐥"   # CUNEIFORM NUMERIC SIGN THREE SHAR2 VARIANT FORM
+<Multi_key> <c> <f> <o> <u> <r> <s> <h> <a> <r> <2> : "𒐦"   # CUNEIFORM NUMERIC SIGN FOUR SHAR2
+<Multi_key> <c> <f> <i> <v> <e> <s> <h> <a> <r> <2> : "𒐧"   # CUNEIFORM NUMERIC SIGN FIVE SHAR2
+<Multi_key> <c> <s> <i> <x> <s> <h> <a> <r> <2> : "𒐨"   # CUNEIFORM NUMERIC SIGN SIX SHAR2
+<Multi_key> <c> <s> <e> <v> <e> <n> <s> <h> <a> <r> <2> : "𒐩"   # CUNEIFORM NUMERIC SIGN SEVEN SHAR2
+<Multi_key> <c> <e> <i> <g> <h> <t> <s> <h> <a> <r> <2> : "𒐪"   # CUNEIFORM NUMERIC SIGN EIGHT SHAR2
+<Multi_key> <c> <n> <i> <n> <e> <s> <h> <a> <r> <2> : "𒐫"   # CUNEIFORM NUMERIC SIGN NINE SHAR2
+<Multi_key> <c> <o> <n> <e> <s> <h> <a> <r> <u> : "𒐬"   # CUNEIFORM NUMERIC SIGN ONE SHARU
+<Multi_key> <c> <t> <w> <o> <s> <h> <a> <r> <u> : "𒐭"   # CUNEIFORM NUMERIC SIGN TWO SHARU
+<Multi_key> <c> <t> <h> <r> <e> <e> <s> <h> <a> <r> <u> : "𒐮"   # CUNEIFORM NUMERIC SIGN THREE SHARU
+<Multi_key> <c> <t> <h> <r> <e> <e> <s> <h> <a> <r> <u> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> : "𒐯"   # CUNEIFORM NUMERIC SIGN THREE SHARU VARIANT FORM
+<Multi_key> <c> <f> <o> <u> <r> <s> <h> <a> <r> <u> : "𒐰"   # CUNEIFORM NUMERIC SIGN FOUR SHARU
+<Multi_key> <c> <f> <i> <v> <e> <s> <h> <a> <r> <u> : "𒐱"   # CUNEIFORM NUMERIC SIGN FIVE SHARU
+<Multi_key> <c> <s> <h> <a> <r> <2> <t> <i> <m> <e> <s> <g> <a> <l> <p> <l> <u> <s> <d> <i> <s> <h> : "𒐲"   # CUNEIFORM NUMERIC SIGN SHAR2 TIMES GAL PLUS DISH
+<Multi_key> <c> <s> <h> <a> <r> <2> <t> <i> <m> <e> <s> <g> <a> <l> <p> <l> <u> <s> <m> <i> <n> : "𒐳"   # CUNEIFORM NUMERIC SIGN SHAR2 TIMES GAL PLUS MIN
+<Multi_key> <c> <o> <n> <e> <b> <u> <r> <u> : "𒐴"   # CUNEIFORM NUMERIC SIGN ONE BURU
+<Multi_key> <c> <t> <w> <o> <b> <u> <r> <u> : "𒐵"   # CUNEIFORM NUMERIC SIGN TWO BURU
+<Multi_key> <c> <t> <h> <r> <e> <e> <b> <u> <r> <u> : "𒐶"   # CUNEIFORM NUMERIC SIGN THREE BURU
+<Multi_key> <c> <t> <h> <r> <e> <e> <b> <u> <r> <u> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> : "𒐷"   # CUNEIFORM NUMERIC SIGN THREE BURU VARIANT FORM
+<Multi_key> <c> <f> <o> <u> <r> <b> <u> <r> <u> : "𒐸"   # CUNEIFORM NUMERIC SIGN FOUR BURU
+<Multi_key> <c> <f> <i> <v> <e> <b> <u> <r> <u> : "𒐹"   # CUNEIFORM NUMERIC SIGN FIVE BURU
+<Multi_key> <c> <t> <h> <r> <e> <e> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <e> <s> <h> <1> <6> : "𒐺"   # CUNEIFORM NUMERIC SIGN THREE VARIANT FORM ESH16
+<Multi_key> <c> <t> <h> <r> <e> <e> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <e> <s> <h> <2> <1> : "𒐻"   # CUNEIFORM NUMERIC SIGN THREE VARIANT FORM ESH21
+<Multi_key> <c> <f> <o> <u> <r> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <l> <i> <m> <m> <u> : "𒐼"   # CUNEIFORM NUMERIC SIGN FOUR VARIANT FORM LIMMU
+<Multi_key> <c> <f> <o> <u> <r> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <l> <i> <m> <m> <u> <4> : "𒐽"   # CUNEIFORM NUMERIC SIGN FOUR VARIANT FORM LIMMU4
+<Multi_key> <c> <f> <o> <u> <r> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <l> <i> <m> <m> <u> <a> : "𒐾"   # CUNEIFORM NUMERIC SIGN FOUR VARIANT FORM LIMMU A
+<Multi_key> <c> <f> <o> <u> <r> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <l> <i> <m> <m> <u> <b> : "𒐿"   # CUNEIFORM NUMERIC SIGN FOUR VARIANT FORM LIMMU B
+<Multi_key> <c> <s> <i> <x> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <a> <s> <h> <9> : "𒑀"   # CUNEIFORM NUMERIC SIGN SIX VARIANT FORM ASH9
+<Multi_key> <c> <s> <e> <v> <e> <n> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <i> <m> <i> <n> <3> : "𒑁"   # CUNEIFORM NUMERIC SIGN SEVEN VARIANT FORM IMIN3
+<Multi_key> <c> <s> <e> <v> <e> <n> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <i> <m> <i> <n> <a> : "𒑂"   # CUNEIFORM NUMERIC SIGN SEVEN VARIANT FORM IMIN A
+<Multi_key> <c> <s> <e> <v> <e> <n> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <i> <m> <i> <n> <b> : "𒑃"   # CUNEIFORM NUMERIC SIGN SEVEN VARIANT FORM IMIN B
+<Multi_key> <c> <e> <i> <g> <h> <t> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <u> <s> <s> <u> : "𒑄"   # CUNEIFORM NUMERIC SIGN EIGHT VARIANT FORM USSU
+<Multi_key> <c> <e> <i> <g> <h> <t> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <u> <s> <s> <u> <3> : "𒑅"   # CUNEIFORM NUMERIC SIGN EIGHT VARIANT FORM USSU3
+<Multi_key> <c> <n> <i> <n> <e> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <i> <l> <i> <m> <m> <u> : "𒑆"   # CUNEIFORM NUMERIC SIGN NINE VARIANT FORM ILIMMU
+<Multi_key> <c> <n> <i> <n> <e> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <i> <l> <i> <m> <m> <u> <3> : "𒑇"   # CUNEIFORM NUMERIC SIGN NINE VARIANT FORM ILIMMU3
+<Multi_key> <c> <n> <i> <n> <e> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <i> <l> <i> <m> <m> <u> <4> : "𒑈"   # CUNEIFORM NUMERIC SIGN NINE VARIANT FORM ILIMMU4
+<Multi_key> <c> <n> <i> <n> <e> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <i> <l> <i> <m> <m> <u> <a> : "𒑉"   # CUNEIFORM NUMERIC SIGN NINE VARIANT FORM ILIMMU A
+<Multi_key> <c> <t> <w> <o> <a> <s> <h> <t> <e> <n> <u> : "𒑊"   # CUNEIFORM NUMERIC SIGN TWO ASH TENU
+<Multi_key> <c> <t> <h> <r> <e> <e> <a> <s> <h> <t> <e> <n> <u> : "𒑋"   # CUNEIFORM NUMERIC SIGN THREE ASH TENU
+<Multi_key> <c> <f> <o> <u> <r> <a> <s> <h> <t> <e> <n> <u> : "𒑌"   # CUNEIFORM NUMERIC SIGN FOUR ASH TENU
+<Multi_key> <c> <f> <i> <v> <e> <a> <s> <h> <t> <e> <n> <u> : "𒑍"   # CUNEIFORM NUMERIC SIGN FIVE ASH TENU
+<Multi_key> <c> <s> <i> <x> <a> <s> <h> <t> <e> <n> <u> : "𒑎"   # CUNEIFORM NUMERIC SIGN SIX ASH TENU
+<Multi_key> <c> <o> <n> <e> <b> <a> <n> <2> : "𒑏"   # CUNEIFORM NUMERIC SIGN ONE BAN2
+<Multi_key> <c> <t> <w> <o> <b> <a> <n> <2> : "𒑐"   # CUNEIFORM NUMERIC SIGN TWO BAN2
+<Multi_key> <c> <t> <h> <r> <e> <e> <b> <a> <n> <2> : "𒑑"   # CUNEIFORM NUMERIC SIGN THREE BAN2
+<Multi_key> <c> <f> <o> <u> <r> <b> <a> <n> <2> : "𒑒"   # CUNEIFORM NUMERIC SIGN FOUR BAN2
+<Multi_key> <c> <f> <o> <u> <r> <b> <a> <n> <2> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> : "𒑓"   # CUNEIFORM NUMERIC SIGN FOUR BAN2 VARIANT FORM
+<Multi_key> <c> <f> <i> <v> <e> <b> <a> <n> <2> : "𒑔"   # CUNEIFORM NUMERIC SIGN FIVE BAN2
+<Multi_key> <c> <f> <i> <v> <e> <b> <a> <n> <2> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> : "𒑕"   # CUNEIFORM NUMERIC SIGN FIVE BAN2 VARIANT FORM
+<Multi_key> <c> <n> <i> <g> <i> <d> <a> <m> <i> <n> : "𒑖"   # CUNEIFORM NUMERIC SIGN NIGIDAMIN
+<Multi_key> <c> <n> <i> <g> <i> <d> <a> <e> <s> <h> : "𒑗"   # CUNEIFORM NUMERIC SIGN NIGIDAESH
+<Multi_key> <c> <o> <n> <e> <e> <s> <h> <e> <3> : "𒑘"   # CUNEIFORM NUMERIC SIGN ONE ESHE3
+<Multi_key> <c> <t> <w> <o> <e> <s> <h> <e> <3> : "𒑙"   # CUNEIFORM NUMERIC SIGN TWO ESHE3
+<Multi_key> <c> <o> <n> <e> <t> <h> <i> <r> <d> <d> <i> <s> <h> : "𒑚"   # CUNEIFORM NUMERIC SIGN ONE THIRD DISH
+<Multi_key> <c> <t> <w> <o> <t> <h> <i> <r> <d> <s> <d> <i> <s> <h> : "𒑛"   # CUNEIFORM NUMERIC SIGN TWO THIRDS DISH
+<Multi_key> <c> <f> <i> <v> <e> <s> <i> <x> <t> <h> <s> <d> <i> <s> <h> : "𒑜"   # CUNEIFORM NUMERIC SIGN FIVE SIXTHS DISH
+<Multi_key> <c> <o> <n> <e> <t> <h> <i> <r> <d> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <a> : "𒑝"   # CUNEIFORM NUMERIC SIGN ONE THIRD VARIANT FORM A
+<Multi_key> <c> <t> <w> <o> <t> <h> <i> <r> <d> <s> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> <a> : "𒑞"   # CUNEIFORM NUMERIC SIGN TWO THIRDS VARIANT FORM A
+<Multi_key> <c> <o> <n> <e> <e> <i> <g> <h> <t> <h> <a> <s> <h> : "𒑟"   # CUNEIFORM NUMERIC SIGN ONE EIGHTH ASH
+<Multi_key> <c> <o> <n> <e> <q> <u> <a> <r> <t> <e> <r> <a> <s> <h> : "𒑠"   # CUNEIFORM NUMERIC SIGN ONE QUARTER ASH
+<Multi_key> <c> <o> <l> <d> <a> <s> <s> <y> <r> <i> <a> <n> <o> <n> <e> <s> <i> <x> <t> <h> : "𒑡"   # CUNEIFORM NUMERIC SIGN OLD ASSYRIAN ONE SIXTH
+<Multi_key> <c> <o> <l> <d> <a> <s> <s> <y> <r> <i> <a> <n> <o> <n> <e> <q> <u> <a> <r> <t> <e> <r> : "𒑢"   # CUNEIFORM NUMERIC SIGN OLD ASSYRIAN ONE QUARTER
+<Multi_key> <c> <o> <n> <e> <q> <u> <a> <r> <t> <e> <r> <g> <u> <r> : "𒑣"   # CUNEIFORM NUMERIC SIGN ONE QUARTER GUR
+<Multi_key> <c> <o> <n> <e> <h> <a> <l> <f> <g> <u> <r> : "𒑤"   # CUNEIFORM NUMERIC SIGN ONE HALF GUR
+<Multi_key> <c> <e> <l> <a> <m> <i> <t> <e> <o> <n> <e> <t> <h> <i> <r> <d> : "𒑥"   # CUNEIFORM NUMERIC SIGN ELAMITE ONE THIRD
+<Multi_key> <c> <e> <l> <a> <m> <i> <t> <e> <t> <w> <o> <t> <h> <i> <r> <d> <s> : "𒑦"   # CUNEIFORM NUMERIC SIGN ELAMITE TWO THIRDS
+<Multi_key> <c> <e> <l> <a> <m> <i> <t> <e> <f> <o> <r> <t> <y> : "𒑧"   # CUNEIFORM NUMERIC SIGN ELAMITE FORTY
+<Multi_key> <c> <e> <l> <a> <m> <i> <t> <e> <f> <i> <f> <t> <y> : "𒑨"   # CUNEIFORM NUMERIC SIGN ELAMITE FIFTY
+<Multi_key> <c> <f> <o> <u> <r> <u> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> : "𒑩"   # CUNEIFORM NUMERIC SIGN FOUR U VARIANT FORM
+<Multi_key> <c> <f> <i> <v> <e> <u> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> : "𒑪"   # CUNEIFORM NUMERIC SIGN FIVE U VARIANT FORM
+<Multi_key> <c> <s> <i> <x> <u> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> : "𒑫"   # CUNEIFORM NUMERIC SIGN SIX U VARIANT FORM
+<Multi_key> <c> <s> <e> <v> <e> <n> <u> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> : "𒑬"   # CUNEIFORM NUMERIC SIGN SEVEN U VARIANT FORM
+<Multi_key> <c> <e> <i> <g> <h> <t> <u> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> : "𒑭"   # CUNEIFORM NUMERIC SIGN EIGHT U VARIANT FORM
+<Multi_key> <c> <n> <i> <n> <e> <u> <v> <a> <r> <i> <a> <n> <t> <f> <o> <r> <m> : "𒑮"   # CUNEIFORM NUMERIC SIGN NINE U VARIANT FORM
+<Multi_key> <c> <s> <i> <g> <n> <o> <l> <d> <a> <s> <s> <y> <r> <i> <a> <n> <w> <o> <r> <d> <d> <i> <v> <i> <d> <e> <r> : "𒑰"   # CUNEIFORM PUNCTUATION SIGN OLD ASSYRIAN WORD DIVIDER
+<Multi_key> <c> <s> <i> <g> <n> <v> <e> <r> <t> <i> <c> <a> <l> <c> <o> <l> <o> <n> : "𒑱"   # CUNEIFORM PUNCTUATION SIGN VERTICAL COLON
+<Multi_key> <c> <s> <i> <g> <n> <d> <i> <a> <g> <o> <n> <a> <l> <c> <o> <l> <o> <n> : "𒑲"   # CUNEIFORM PUNCTUATION SIGN DIAGONAL COLON
+<Multi_key> <c> <s> <i> <g> <n> <d> <i> <a> <g> <o> <n> <a> <l> <t> <r> <i> <c> <o> <l> <o> <n> : "𒑳"   # CUNEIFORM PUNCTUATION SIGN DIAGONAL TRICOLON
+<Multi_key> <c> <s> <i> <g> <n> <d> <i> <a> <g> <o> <n> <a> <l> <q> <u> <a> <d> <c> <o> <l> <o> <n> : "𒑴"   # CUNEIFORM PUNCTUATION SIGN DIAGONAL QUADCOLON
+<Multi_key> <c> <a> <b> <t> <i> <m> <e> <s> <n> <u> <n> <t> <e> <n> <u> : "𒒀"   # CUNEIFORM SIGN AB TIMES NUN TENU
+<Multi_key> <c> <a> <b> <t> <i> <m> <e> <s> <s> <h> <u> <2> : "𒒁"   # CUNEIFORM SIGN AB TIMES SHU2
+<Multi_key> <c> <a> <d> <t> <i> <m> <e> <s> <e> <s> <h> <2> : "𒒂"   # CUNEIFORM SIGN AD TIMES ESH2
+<Multi_key> <c> <b> <a> <d> <t> <i> <m> <e> <s> <d> <i> <s> <h> <t> <e> <n> <u> : "𒒃"   # CUNEIFORM SIGN BAD TIMES DISH TENU
+<Multi_key> <c> <b> <a> <h> <a> <r> <2> <t> <i> <m> <e> <s> <a> <b> <2> : "𒒄"   # CUNEIFORM SIGN BAHAR2 TIMES AB2
+<Multi_key> <c> <b> <a> <h> <a> <r> <2> <t> <i> <m> <e> <s> <n> <i> : "𒒅"   # CUNEIFORM SIGN BAHAR2 TIMES NI
+<Multi_key> <c> <b> <a> <h> <a> <r> <2> <t> <i> <m> <e> <s> <z> <a> : "𒒆"   # CUNEIFORM SIGN BAHAR2 TIMES ZA
+<Multi_key> <c> <b> <u> <o> <v> <e> <r> <b> <u> <t> <i> <m> <e> <s> <n> <a> <2> : "𒒇"   # CUNEIFORM SIGN BU OVER BU TIMES NA2
+<Multi_key> <c> <d> <a> <t> <i> <m> <e> <s> <t> <a> <k> <4> : "𒒈"   # CUNEIFORM SIGN DA TIMES TAK4
+<Multi_key> <c> <d> <a> <g> <t> <i> <m> <e> <s> <k> <u> <r> : "𒒉"   # CUNEIFORM SIGN DAG TIMES KUR
+<Multi_key> <c> <d> <i> <m> <t> <i> <m> <e> <s> <i> <g> <i> : "𒒊"   # CUNEIFORM SIGN DIM TIMES IGI
+<Multi_key> <c> <d> <i> <m> <t> <i> <m> <e> <s> <u> <u> <u> : "𒒋"   # CUNEIFORM SIGN DIM TIMES U U U
+<Multi_key> <c> <d> <i> <m> <2> <t> <i> <m> <e> <s> <u> <d> : "𒒌"   # CUNEIFORM SIGN DIM2 TIMES UD
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <a> <n> <s> <h> <e> : "𒒍"   # CUNEIFORM SIGN DUG TIMES ANSHE
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <a> <s> <h> : "𒒎"   # CUNEIFORM SIGN DUG TIMES ASH
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <a> <s> <h> <a> <t> <l> <e> <f> <t> : "𒒏"   # CUNEIFORM SIGN DUG TIMES ASH AT LEFT
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <d> <i> <n> : "𒒐"   # CUNEIFORM SIGN DUG TIMES DIN
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <d> <u> <n> : "𒒑"   # CUNEIFORM SIGN DUG TIMES DUN
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <e> <r> <i> <n> <2> : "𒒒"   # CUNEIFORM SIGN DUG TIMES ERIN2
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <g> <a> : "𒒓"   # CUNEIFORM SIGN DUG TIMES GA
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <g> <i> : "𒒔"   # CUNEIFORM SIGN DUG TIMES GI
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <g> <i> <r> <2> <g> <u> <n> <u> : "𒒕"   # CUNEIFORM SIGN DUG TIMES GIR2 GUNU
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <g> <i> <s> <h> : "𒒖"   # CUNEIFORM SIGN DUG TIMES GISH
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <h> <a> : "𒒗"   # CUNEIFORM SIGN DUG TIMES HA
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <h> <i> : "𒒘"   # CUNEIFORM SIGN DUG TIMES HI
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <i> <g> <i> <g> <u> <n> <u> : "𒒙"   # CUNEIFORM SIGN DUG TIMES IGI GUNU
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <k> <a> <s> <k> <a> <l> : "𒒚"   # CUNEIFORM SIGN DUG TIMES KASKAL
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <k> <u> <r> : "𒒛"   # CUNEIFORM SIGN DUG TIMES KUR
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <k> <u> <s> <h> <u> <2> : "𒒜"   # CUNEIFORM SIGN DUG TIMES KUSHU2
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <k> <u> <s> <h> <u> <2> <p> <l> <u> <s> <k> <a> <s> <k> <a> <l> : "𒒝"   # CUNEIFORM SIGN DUG TIMES KUSHU2 PLUS KASKAL
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <l> <a> <k> <0> <2> <0> : "𒒞"   # CUNEIFORM SIGN DUG TIMES LAK-020
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <l> <a> <m> : "𒒟"   # CUNEIFORM SIGN DUG TIMES LAM
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <l> <a> <m> <t> <i> <m> <e> <s> <k> <u> <r> : "𒒠"   # CUNEIFORM SIGN DUG TIMES LAM TIMES KUR
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <l> <u> <h> <p> <l> <u> <s> <g> <i> <s> <h> : "𒒡"   # CUNEIFORM SIGN DUG TIMES LUH PLUS GISH
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <m> <a> <s> <h> : "𒒢"   # CUNEIFORM SIGN DUG TIMES MASH
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <m> <e> <s> : "𒒣"   # CUNEIFORM SIGN DUG TIMES MES
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <m> <i> : "𒒤"   # CUNEIFORM SIGN DUG TIMES MI
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <n> <i> : "𒒥"   # CUNEIFORM SIGN DUG TIMES NI
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <p> <i> : "𒒦"   # CUNEIFORM SIGN DUG TIMES PI
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <s> <h> <e> : "𒒧"   # CUNEIFORM SIGN DUG TIMES SHE
+<Multi_key> <c> <d> <u> <g> <t> <i> <m> <e> <s> <s> <i> <g> <u> <n> <u> : "𒒨"   # CUNEIFORM SIGN DUG TIMES SI GUNU
+<Multi_key> <c> <e> <2> <t> <i> <m> <e> <s> <k> <u> <r> : "𒒩"   # CUNEIFORM SIGN E2 TIMES KUR
+<Multi_key> <c> <e> <2> <t> <i> <m> <e> <s> <p> <a> <p> : "𒒪"   # CUNEIFORM SIGN E2 TIMES PAP
+<Multi_key> <c> <e> <r> <i> <n> <2> <x> : "𒒫"   # CUNEIFORM SIGN ERIN2 X
+<Multi_key> <c> <e> <s> <h> <2> <c> <r> <o> <s> <s> <i> <n> <g> <e> <s> <h> <2> : "𒒬"   # CUNEIFORM SIGN ESH2 CROSSING ESH2
+<Multi_key> <c> <e> <z> <e> <n> <s> <h> <e> <s> <h> <i> <g> <t> <i> <m> <e> <s> <a> <s> <h> : "𒒭"   # CUNEIFORM SIGN EZEN SHESHIG TIMES ASH
+<Multi_key> <c> <e> <z> <e> <n> <s> <h> <e> <s> <h> <i> <g> <t> <i> <m> <e> <s> <h> <i> : "𒒮"   # CUNEIFORM SIGN EZEN SHESHIG TIMES HI
+<Multi_key> <c> <e> <z> <e> <n> <s> <h> <e> <s> <h> <i> <g> <t> <i> <m> <e> <s> <i> <g> <i> <g> <u> <n> <u> : "𒒯"   # CUNEIFORM SIGN EZEN SHESHIG TIMES IGI GUNU
+<Multi_key> <c> <e> <z> <e> <n> <s> <h> <e> <s> <h> <i> <g> <t> <i> <m> <e> <s> <l> <a> : "𒒰"   # CUNEIFORM SIGN EZEN SHESHIG TIMES LA
+<Multi_key> <c> <e> <z> <e> <n> <s> <h> <e> <s> <h> <i> <g> <t> <i> <m> <e> <s> <l> <a> <l> : "𒒱"   # CUNEIFORM SIGN EZEN SHESHIG TIMES LAL
+<Multi_key> <c> <e> <z> <e> <n> <s> <h> <e> <s> <h> <i> <g> <t> <i> <m> <e> <s> <m> <e> : "𒒲"   # CUNEIFORM SIGN EZEN SHESHIG TIMES ME
+<Multi_key> <c> <e> <z> <e> <n> <s> <h> <e> <s> <h> <i> <g> <t> <i> <m> <e> <s> <m> <e> <s> : "𒒳"   # CUNEIFORM SIGN EZEN SHESHIG TIMES MES
+<Multi_key> <c> <e> <z> <e> <n> <s> <h> <e> <s> <h> <i> <g> <t> <i> <m> <e> <s> <s> <u> : "𒒴"   # CUNEIFORM SIGN EZEN SHESHIG TIMES SU
+<Multi_key> <c> <e> <z> <e> <n> <t> <i> <m> <e> <s> <s> <u> : "𒒵"   # CUNEIFORM SIGN EZEN TIMES SU
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <b> <a> <h> <a> <r> <2> : "𒒶"   # CUNEIFORM SIGN GA2 TIMES BAHAR2
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <d> <i> <m> <g> <u> <n> <u> : "𒒷"   # CUNEIFORM SIGN GA2 TIMES DIM GUNU
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <d> <u> <g> <t> <i> <m> <e> <s> <i> <g> <i> <g> <u> <n> <u> : "𒒸"   # CUNEIFORM SIGN GA2 TIMES DUG TIMES IGI GUNU
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <d> <u> <g> <t> <i> <m> <e> <s> <k> <a> <s> <k> <a> <l> : "𒒹"   # CUNEIFORM SIGN GA2 TIMES DUG TIMES KASKAL
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <e> <r> <e> <n> : "𒒺"   # CUNEIFORM SIGN GA2 TIMES EREN
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <g> <a> : "𒒻"   # CUNEIFORM SIGN GA2 TIMES GA
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <g> <a> <r> <p> <l> <u> <s> <d> <i> : "𒒼"   # CUNEIFORM SIGN GA2 TIMES GAR PLUS DI
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <g> <a> <r> <p> <l> <u> <s> <n> <e> : "𒒽"   # CUNEIFORM SIGN GA2 TIMES GAR PLUS NE
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <h> <a> <p> <l> <u> <s> <a> : "𒒾"   # CUNEIFORM SIGN GA2 TIMES HA PLUS A
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <k> <u> <s> <h> <u> <2> <p> <l> <u> <s> <k> <a> <s> <k> <a> <l> : "𒒿"   # CUNEIFORM SIGN GA2 TIMES KUSHU2 PLUS KASKAL
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <l> <a> <m> : "𒓀"   # CUNEIFORM SIGN GA2 TIMES LAM
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <l> <a> <m> <t> <i> <m> <e> <s> <k> <u> <r> : "𒓁"   # CUNEIFORM SIGN GA2 TIMES LAM TIMES KUR
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <l> <u> <h> : "𒓂"   # CUNEIFORM SIGN GA2 TIMES LUH
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <m> <u> <s> <h> : "𒓃"   # CUNEIFORM SIGN GA2 TIMES MUSH
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <n> <e> : "𒓄"   # CUNEIFORM SIGN GA2 TIMES NE
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <n> <e> <p> <l> <u> <s> <e> <2> : "𒓅"   # CUNEIFORM SIGN GA2 TIMES NE PLUS E2
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <n> <e> <p> <l> <u> <s> <g> <i> : "𒓆"   # CUNEIFORM SIGN GA2 TIMES NE PLUS GI
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <s> <h> <i> <m> : "𒓇"   # CUNEIFORM SIGN GA2 TIMES SHIM
+<Multi_key> <c> <g> <a> <2> <t> <i> <m> <e> <s> <z> <i> <z> <2> : "𒓈"   # CUNEIFORM SIGN GA2 TIMES ZIZ2
+<Multi_key> <c> <g> <a> <b> <a> <r> <o> <t> <a> <t> <e> <d> <n> <i> <n> <e> <t> <y> <d> <e> <g> <r> <e> <e> <s> : "𒓉"   # CUNEIFORM SIGN GABA ROTATED NINETY DEGREES
+<Multi_key> <c> <g> <e> <s> <h> <t> <i> <n> <t> <i> <m> <e> <s> <u> : "𒓊"   # CUNEIFORM SIGN GESHTIN TIMES U
+<Multi_key> <c> <g> <i> <s> <h> <t> <i> <m> <e> <s> <g> <i> <s> <h> <c> <r> <o> <s> <s> <i> <n> <g> <g> <i> <s> <h> : "𒓋"   # CUNEIFORM SIGN GISH TIMES GISH CROSSING GISH
+<Multi_key> <c> <g> <u> <2> <t> <i> <m> <e> <s> <i> <g> <i> <g> <u> <n> <u> : "𒓌"   # CUNEIFORM SIGN GU2 TIMES IGI GUNU
+<Multi_key> <c> <g> <u> <d> <p> <l> <u> <s> <g> <i> <s> <h> <t> <i> <m> <e> <s> <t> <a> <k> <4> : "𒓍"   # CUNEIFORM SIGN GUD PLUS GISH TIMES TAK4
+<Multi_key> <c> <h> <a> <t> <e> <n> <u> <g> <u> <n> <u> : "𒓎"   # CUNEIFORM SIGN HA TENU GUNU
+<Multi_key> <c> <h> <i> <t> <i> <m> <e> <s> <a> <s> <h> <o> <v> <e> <r> <h> <i> <t> <i> <m> <e> <s> <a> <s> <h> : "𒓏"   # CUNEIFORM SIGN HI TIMES ASH OVER HI TIMES ASH
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <b> <u> : "𒓐"   # CUNEIFORM SIGN KA TIMES BU
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <k> <a> : "𒓑"   # CUNEIFORM SIGN KA TIMES KA
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <u> <u> <u> : "𒓒"   # CUNEIFORM SIGN KA TIMES U U U
+<Multi_key> <c> <k> <a> <t> <i> <m> <e> <s> <u> <r> : "𒓓"   # CUNEIFORM SIGN KA TIMES UR
+<Multi_key> <c> <l> <a> <g> <a> <b> <t> <i> <m> <e> <s> <z> <u> <o> <v> <e> <r> <z> <u> : "𒓔"   # CUNEIFORM SIGN LAGAB TIMES ZU OVER ZU
+<Multi_key> <c> <l> <a> <k> <0> <0> <3> : "𒓕"   # CUNEIFORM SIGN LAK-003
+<Multi_key> <c> <l> <a> <k> <0> <2> <1> : "𒓖"   # CUNEIFORM SIGN LAK-021
+<Multi_key> <c> <l> <a> <k> <0> <2> <5> : "𒓗"   # CUNEIFORM SIGN LAK-025
+<Multi_key> <c> <l> <a> <k> <0> <3> <0> : "𒓘"   # CUNEIFORM SIGN LAK-030
+<Multi_key> <c> <l> <a> <k> <0> <5> <0> : "𒓙"   # CUNEIFORM SIGN LAK-050
+<Multi_key> <c> <l> <a> <k> <0> <5> <1> : "𒓚"   # CUNEIFORM SIGN LAK-051
+<Multi_key> <c> <l> <a> <k> <0> <6> <2> : "𒓛"   # CUNEIFORM SIGN LAK-062
+<Multi_key> <c> <l> <a> <k> <0> <7> <9> <o> <v> <e> <r> <l> <a> <k> <0> <7> <9> <g> <u> <n> <u> : "𒓜"   # CUNEIFORM SIGN LAK-079 OVER LAK-079 GUNU
+<Multi_key> <c> <l> <a> <k> <0> <8> <0> : "𒓝"   # CUNEIFORM SIGN LAK-080
+<Multi_key> <c> <l> <a> <k> <0> <8> <1> <o> <v> <e> <r> <l> <a> <k> <0> <8> <1> : "𒓞"   # CUNEIFORM SIGN LAK-081 OVER LAK-081
+<Multi_key> <c> <l> <a> <k> <0> <9> <2> : "𒓟"   # CUNEIFORM SIGN LAK-092
+<Multi_key> <c> <l> <a> <k> <1> <3> <0> : "𒓠"   # CUNEIFORM SIGN LAK-130
+<Multi_key> <c> <l> <a> <k> <1> <4> <2> : "𒓡"   # CUNEIFORM SIGN LAK-142
+<Multi_key> <c> <l> <a> <k> <2> <1> <0> : "𒓢"   # CUNEIFORM SIGN LAK-210
+<Multi_key> <c> <l> <a> <k> <2> <1> <9> : "𒓣"   # CUNEIFORM SIGN LAK-219
+<Multi_key> <c> <l> <a> <k> <2> <2> <0> : "𒓤"   # CUNEIFORM SIGN LAK-220
+<Multi_key> <c> <l> <a> <k> <2> <2> <5> : "𒓥"   # CUNEIFORM SIGN LAK-225
+<Multi_key> <c> <l> <a> <k> <2> <2> <8> : "𒓦"   # CUNEIFORM SIGN LAK-228
+<Multi_key> <c> <l> <a> <k> <2> <3> <8> : "𒓧"   # CUNEIFORM SIGN LAK-238
+<Multi_key> <c> <l> <a> <k> <2> <6> <5> : "𒓨"   # CUNEIFORM SIGN LAK-265
+<Multi_key> <c> <l> <a> <k> <2> <6> <6> : "𒓩"   # CUNEIFORM SIGN LAK-266
+<Multi_key> <c> <l> <a> <k> <3> <4> <3> : "𒓪"   # CUNEIFORM SIGN LAK-343
+<Multi_key> <c> <l> <a> <k> <3> <4> <7> : "𒓫"   # CUNEIFORM SIGN LAK-347
+<Multi_key> <c> <l> <a> <k> <3> <4> <8> : "𒓬"   # CUNEIFORM SIGN LAK-348
+<Multi_key> <c> <l> <a> <k> <3> <8> <3> : "𒓭"   # CUNEIFORM SIGN LAK-383
+<Multi_key> <c> <l> <a> <k> <3> <8> <4> : "𒓮"   # CUNEIFORM SIGN LAK-384
+<Multi_key> <c> <l> <a> <k> <3> <9> <0> : "𒓯"   # CUNEIFORM SIGN LAK-390
+<Multi_key> <c> <l> <a> <k> <4> <4> <1> : "𒓰"   # CUNEIFORM SIGN LAK-441
+<Multi_key> <c> <l> <a> <k> <4> <4> <9> : "𒓱"   # CUNEIFORM SIGN LAK-449
+<Multi_key> <c> <l> <a> <k> <4> <4> <9> <t> <i> <m> <e> <s> <g> <u> : "𒓲"   # CUNEIFORM SIGN LAK-449 TIMES GU
+<Multi_key> <c> <l> <a> <k> <4> <4> <9> <t> <i> <m> <e> <s> <i> <g> <i> : "𒓳"   # CUNEIFORM SIGN LAK-449 TIMES IGI
+<Multi_key> <c> <l> <a> <k> <4> <4> <9> <t> <i> <m> <e> <s> <p> <a> <p> <p> <l> <u> <s> <l> <u> <3> : "𒓴"   # CUNEIFORM SIGN LAK-449 TIMES PAP PLUS LU3
+<Multi_key> <c> <l> <a> <k> <4> <4> <9> <t> <i> <m> <e> <s> <p> <a> <p> <p> <l> <u> <s> <p> <a> <p> <p> <l> <u> <s> <l> <u> <3> : "𒓵"   # CUNEIFORM SIGN LAK-449 TIMES PAP PLUS PAP PLUS LU3
+<Multi_key> <c> <l> <a> <k> <4> <4> <9> <t> <i> <m> <e> <s> <u> <2> <p> <l> <u> <s> <b> <a> : "𒓶"   # CUNEIFORM SIGN LAK-449 TIMES U2 PLUS BA
+<Multi_key> <c> <l> <a> <k> <4> <5> <0> : "𒓷"   # CUNEIFORM SIGN LAK-450
+<Multi_key> <c> <l> <a> <k> <4> <5> <7> : "𒓸"   # CUNEIFORM SIGN LAK-457
+<Multi_key> <c> <l> <a> <k> <4> <7> <0> : "𒓹"   # CUNEIFORM SIGN LAK-470
+<Multi_key> <c> <l> <a> <k> <4> <8> <3> : "𒓺"   # CUNEIFORM SIGN LAK-483
+<Multi_key> <c> <l> <a> <k> <4> <9> <0> : "𒓻"   # CUNEIFORM SIGN LAK-490
+<Multi_key> <c> <l> <a> <k> <4> <9> <2> : "𒓼"   # CUNEIFORM SIGN LAK-492
+<Multi_key> <c> <l> <a> <k> <4> <9> <3> : "𒓽"   # CUNEIFORM SIGN LAK-493
+<Multi_key> <c> <l> <a> <k> <4> <9> <5> : "𒓾"   # CUNEIFORM SIGN LAK-495
+<Multi_key> <c> <l> <a> <k> <5> <5> <0> : "𒓿"   # CUNEIFORM SIGN LAK-550
+<Multi_key> <c> <l> <a> <k> <6> <0> <8> : "𒔀"   # CUNEIFORM SIGN LAK-608
+<Multi_key> <c> <l> <a> <k> <6> <1> <7> : "𒔁"   # CUNEIFORM SIGN LAK-617
+<Multi_key> <c> <l> <a> <k> <6> <1> <7> <t> <i> <m> <e> <s> <a> <s> <h> : "𒔂"   # CUNEIFORM SIGN LAK-617 TIMES ASH
+<Multi_key> <c> <l> <a> <k> <6> <1> <7> <t> <i> <m> <e> <s> <b> <a> <d> : "𒔃"   # CUNEIFORM SIGN LAK-617 TIMES BAD
+<Multi_key> <c> <l> <a> <k> <6> <1> <7> <t> <i> <m> <e> <s> <d> <u> <n> <3> <g> <u> <n> <u> <g> <u> <n> <u> : "𒔄"   # CUNEIFORM SIGN LAK-617 TIMES DUN3 GUNU GUNU
+<Multi_key> <c> <l> <a> <k> <6> <1> <7> <t> <i> <m> <e> <s> <k> <u> <3> : "𒔅"   # CUNEIFORM SIGN LAK-617 TIMES KU3
+<Multi_key> <c> <l> <a> <k> <6> <1> <7> <t> <i> <m> <e> <s> <l> <a> : "𒔆"   # CUNEIFORM SIGN LAK-617 TIMES LA
+<Multi_key> <c> <l> <a> <k> <6> <1> <7> <t> <i> <m> <e> <s> <t> <a> <r> : "𒔇"   # CUNEIFORM SIGN LAK-617 TIMES TAR
+<Multi_key> <c> <l> <a> <k> <6> <1> <7> <t> <i> <m> <e> <s> <t> <e> : "𒔈"   # CUNEIFORM SIGN LAK-617 TIMES TE
+<Multi_key> <c> <l> <a> <k> <6> <1> <7> <t> <i> <m> <e> <s> <u> <2> : "𒔉"   # CUNEIFORM SIGN LAK-617 TIMES U2
+<Multi_key> <c> <l> <a> <k> <6> <1> <7> <t> <i> <m> <e> <s> <u> <d> : "𒔊"   # CUNEIFORM SIGN LAK-617 TIMES UD
+<Multi_key> <c> <l> <a> <k> <6> <1> <7> <t> <i> <m> <e> <s> <u> <r> <u> <d> <a> : "𒔋"   # CUNEIFORM SIGN LAK-617 TIMES URUDA
+<Multi_key> <c> <l> <a> <k> <6> <3> <6> : "𒔌"   # CUNEIFORM SIGN LAK-636
+<Multi_key> <c> <l> <a> <k> <6> <4> <8> : "𒔍"   # CUNEIFORM SIGN LAK-648
+<Multi_key> <c> <l> <a> <k> <6> <4> <8> <t> <i> <m> <e> <s> <d> <u> <b> : "𒔎"   # CUNEIFORM SIGN LAK-648 TIMES DUB
+<Multi_key> <c> <l> <a> <k> <6> <4> <8> <t> <i> <m> <e> <s> <g> <a> : "𒔏"   # CUNEIFORM SIGN LAK-648 TIMES GA
+<Multi_key> <c> <l> <a> <k> <6> <4> <8> <t> <i> <m> <e> <s> <i> <g> <i> : "𒔐"   # CUNEIFORM SIGN LAK-648 TIMES IGI
+<Multi_key> <c> <l> <a> <k> <6> <4> <8> <t> <i> <m> <e> <s> <i> <g> <i> <g> <u> <n> <u> : "𒔑"   # CUNEIFORM SIGN LAK-648 TIMES IGI GUNU
+<Multi_key> <c> <l> <a> <k> <6> <4> <8> <t> <i> <m> <e> <s> <n> <i> : "𒔒"   # CUNEIFORM SIGN LAK-648 TIMES NI
+<Multi_key> <c> <l> <a> <k> <6> <4> <8> <t> <i> <m> <e> <s> <p> <a> <p> <p> <l> <u> <s> <p> <a> <p> <p> <l> <u> <s> <l> <u> <3> : "𒔓"   # CUNEIFORM SIGN LAK-648 TIMES PAP PLUS PAP PLUS LU3
+<Multi_key> <c> <l> <a> <k> <6> <4> <8> <t> <i> <m> <e> <s> <s> <h> <e> <s> <h> <p> <l> <u> <s> <k> <i> : "𒔔"   # CUNEIFORM SIGN LAK-648 TIMES SHESH PLUS KI
+<Multi_key> <c> <l> <a> <k> <6> <4> <8> <t> <i> <m> <e> <s> <u> <d> : "𒔕"   # CUNEIFORM SIGN LAK-648 TIMES UD
+<Multi_key> <c> <l> <a> <k> <6> <4> <8> <t> <i> <m> <e> <s> <u> <r> <u> <d> <a> : "𒔖"   # CUNEIFORM SIGN LAK-648 TIMES URUDA
+<Multi_key> <c> <l> <a> <k> <7> <2> <4> : "𒔗"   # CUNEIFORM SIGN LAK-724
+<Multi_key> <c> <l> <a> <k> <7> <4> <9> : "𒔘"   # CUNEIFORM SIGN LAK-749
+<Multi_key> <c> <l> <u> <2> <g> <u> <n> <u> <t> <i> <m> <e> <s> <a> <s> <h> : "𒔙"   # CUNEIFORM SIGN LU2 GUNU TIMES ASH
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <d> <i> <s> <h> : "𒔚"   # CUNEIFORM SIGN LU2 TIMES DISH
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <h> <a> <l> : "𒔛"   # CUNEIFORM SIGN LU2 TIMES HAL
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <p> <a> <p> : "𒔜"   # CUNEIFORM SIGN LU2 TIMES PAP
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <p> <a> <p> <p> <l> <u> <s> <p> <a> <p> <p> <l> <u> <s> <l> <u> <3> : "𒔝"   # CUNEIFORM SIGN LU2 TIMES PAP PLUS PAP PLUS LU3
+<Multi_key> <c> <l> <u> <2> <t> <i> <m> <e> <s> <t> <a> <k> <4> : "𒔞"   # CUNEIFORM SIGN LU2 TIMES TAK4
+<Multi_key> <c> <m> <i> <p> <l> <u> <s> <z> <a> <7> : "𒔟"   # CUNEIFORM SIGN MI PLUS ZA7
+<Multi_key> <c> <m> <u> <s> <h> <o> <v> <e> <r> <m> <u> <s> <h> <t> <i> <m> <e> <s> <g> <a> : "𒔠"   # CUNEIFORM SIGN MUSH OVER MUSH TIMES GA
+<Multi_key> <c> <m> <u> <s> <h> <o> <v> <e> <r> <m> <u> <s> <h> <t> <i> <m> <e> <s> <k> <a> <k> : "𒔡"   # CUNEIFORM SIGN MUSH OVER MUSH TIMES KAK
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <d> <i> <m> <g> <u> <n> <u> : "𒔢"   # CUNEIFORM SIGN NINDA2 TIMES DIM GUNU
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <g> <i> <s> <h> : "𒔣"   # CUNEIFORM SIGN NINDA2 TIMES GISH
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <g> <u> <l> : "𒔤"   # CUNEIFORM SIGN NINDA2 TIMES GUL
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <h> <i> : "𒔥"   # CUNEIFORM SIGN NINDA2 TIMES HI
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <k> <e> <s> <h> <2> : "𒔦"   # CUNEIFORM SIGN NINDA2 TIMES KESH2
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <l> <a> <k> <0> <5> <0> : "𒔧"   # CUNEIFORM SIGN NINDA2 TIMES LAK-050
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <m> <a> <s> <h> : "𒔨"   # CUNEIFORM SIGN NINDA2 TIMES MASH
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <p> <a> <p> <p> <l> <u> <s> <p> <a> <p> : "𒔩"   # CUNEIFORM SIGN NINDA2 TIMES PAP PLUS PAP
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <u> : "𒔪"   # CUNEIFORM SIGN NINDA2 TIMES U
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <u> <p> <l> <u> <s> <u> : "𒔫"   # CUNEIFORM SIGN NINDA2 TIMES U PLUS U
+<Multi_key> <c> <n> <i> <n> <d> <a> <2> <t> <i> <m> <e> <s> <u> <r> <u> <d> <a> : "𒔬"   # CUNEIFORM SIGN NINDA2 TIMES URUDA
+<Multi_key> <c> <s> <a> <g> <g> <u> <n> <u> <t> <i> <m> <e> <s> <h> <a> : "𒔭"   # CUNEIFORM SIGN SAG GUNU TIMES HA
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <e> <n> : "𒔮"   # CUNEIFORM SIGN SAG TIMES EN
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <s> <h> <e> <a> <t> <l> <e> <f> <t> : "𒔯"   # CUNEIFORM SIGN SAG TIMES SHE AT LEFT
+<Multi_key> <c> <s> <a> <g> <t> <i> <m> <e> <s> <t> <a> <k> <4> : "𒔰"   # CUNEIFORM SIGN SAG TIMES TAK4
+<Multi_key> <c> <s> <h> <a> <6> <t> <e> <n> <u> : "𒔱"   # CUNEIFORM SIGN SHA6 TENU
+<Multi_key> <c> <s> <h> <e> <o> <v> <e> <r> <s> <h> <e> : "𒔲"   # CUNEIFORM SIGN SHE OVER SHE
+<Multi_key> <c> <s> <h> <e> <p> <l> <u> <s> <h> <u> <b> <2> : "𒔳"   # CUNEIFORM SIGN SHE PLUS HUB2
+<Multi_key> <c> <s> <h> <e> <p> <l> <u> <s> <n> <a> <m> <2> : "𒔴"   # CUNEIFORM SIGN SHE PLUS NAM2
+<Multi_key> <c> <s> <h> <e> <p> <l> <u> <s> <s> <a> <r> : "𒔵"   # CUNEIFORM SIGN SHE PLUS SAR
+<Multi_key> <c> <s> <h> <u> <2> <p> <l> <u> <s> <d> <u> <g> <t> <i> <m> <e> <s> <n> <i> : "𒔶"   # CUNEIFORM SIGN SHU2 PLUS DUG TIMES NI
+<Multi_key> <c> <s> <h> <u> <2> <p> <l> <u> <s> <e> <2> <t> <i> <m> <e> <s> <a> <n> : "𒔷"   # CUNEIFORM SIGN SHU2 PLUS E2 TIMES AN
+<Multi_key> <c> <s> <i> <t> <i> <m> <e> <s> <t> <a> <k> <4> : "𒔸"   # CUNEIFORM SIGN SI TIMES TAK4
+<Multi_key> <c> <t> <a> <k> <4> <p> <l> <u> <s> <s> <a> <g> : "𒔹"   # CUNEIFORM SIGN TAK4 PLUS SAG
+<Multi_key> <c> <t> <u> <m> <t> <i> <m> <e> <s> <g> <a> <n> <2> <t> <e> <n> <u> : "𒔺"   # CUNEIFORM SIGN TUM TIMES GAN2 TENU
+<Multi_key> <c> <t> <u> <m> <t> <i> <m> <e> <s> <t> <h> <r> <e> <e> <d> <i> <s> <h> : "𒔻"   # CUNEIFORM SIGN TUM TIMES THREE DISH
+<Multi_key> <c> <u> <r> <2> <i> <n> <v> <e> <r> <t> <e> <d> : "𒔼"   # CUNEIFORM SIGN UR2 INVERTED
+<Multi_key> <c> <u> <r> <2> <t> <i> <m> <e> <s> <u> <d> : "𒔽"   # CUNEIFORM SIGN UR2 TIMES UD
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <d> <a> <r> <a> <3> : "𒔾"   # CUNEIFORM SIGN URU TIMES DARA3
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <l> <a> <k> <6> <6> <8> : "𒔿"   # CUNEIFORM SIGN URU TIMES LAK-668
+<Multi_key> <c> <u> <r> <u> <t> <i> <m> <e> <s> <l> <u> <3> : "𒕀"   # CUNEIFORM SIGN URU TIMES LU3
+<Multi_key> <c> <z> <a> <7> : "𒕁"   # CUNEIFORM SIGN ZA7
+<Multi_key> <c> <z> <u> <o> <v> <e> <r> <z> <u> <p> <l> <u> <s> <s> <a> <r> : "𒕂"   # CUNEIFORM SIGN ZU OVER ZU PLUS SAR
+<Multi_key> <c> <z> <u> <5> <t> <i> <m> <e> <s> <t> <h> <r> <e> <e> <d> <i> <s> <h> <t> <e> <n> <u> : "𒕃"   # CUNEIFORM SIGN ZU5 TIMES THREE DISH TENU
+#+END_SRC
+
+* Fonéticos
+São os valores fonéticos de alguns sinais que possuem nomes diferentes.
+#+BEGIN_SRC shell
+<Multi_key> <c> <u> <3> : "𒅇"
+<Multi_key> <c> <d> <i> <n> <g> <i> <r> : "𒀭"   # CUNEIFORM SIGN AN
+#+END_SRC
+
+* Consertos de nome
+Aqui são sinais que possuem nomes esquisitos ou pronuncias questionáveis.
+#+BEGIN_SRC shell
+<Multi_key> <g> <u> : "𒈬" # .GU
+<Multi_key> <d> <u> <g> <4> : "𒅗" # DUG4
+<Multi_key> <m> <i> <2> : "𒊩" # mi2
+#+END_SRC
+* Palavras
+São macros para palavras muito usadas para escrever.
+#+BEGIN_SRC shell
+<Multi_key> <c> <e> <m> <e> <g> <i> <r> : "𒅴𒂠 " # EMEGIR
+<Multi_key> <c> <t> <f> <u> <c> <k> <i> <t> : "𒊩𒅗𒁉𒉡" # Fuck it = foda-se
+<Multi_key> <c> <k> <e> <n> <g> <i> <r> : "𒆠𒂗𒄀" # KENGIR
+#+END_SRC
