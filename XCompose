@@ -1,10 +1,5 @@
 include "%L"
 
-# Palavras
-<Multi_key> <c> <e> <m> <e> <g> <i> <r> : "𒅴𒂠" # EMEGIR
-<Multi_key> <c> <k> <e> <n> <g> <i> <r> : "𒆠𒂗𒄀" # KENGIR
-
-# Cuneiformes
 <Multi_key> <c> <a> : "𒀀"   # CUNEIFORM SIGN A
 <Multi_key> <c> <a> <t> <i> <m> <e> <s> <a> : "𒀁"   # CUNEIFORM SIGN A TIMES A
 <Multi_key> <c> <a> <t> <i> <m> <e> <s> <b> <a> <d> : "𒀂"   # CUNEIFORM SIGN A TIMES BAD
@@ -51,7 +46,6 @@ include "%L"
 <Multi_key> <c> <a> <m> <a> <r> : "𒀫"   # CUNEIFORM SIGN AMAR
 <Multi_key> <c> <a> <m> <a> <r> <t> <i> <m> <e> <s> <s> <h> <e> : "𒀬"   # CUNEIFORM SIGN AMAR TIMES SHE
 <Multi_key> <c> <a> <n> : "𒀭"   # CUNEIFORM SIGN AN
-<Multi_key> <c> <d> <e> <n> <g> <i> <r> : "𒀭"   # CUNEIFORM SIGN AN - DENGIR version
 <Multi_key> <c> <a> <n> <o> <v> <e> <r> <a> <n> : "𒀮"   # CUNEIFORM SIGN AN OVER AN
 <Multi_key> <c> <a> <n> <t> <h> <r> <e> <e> <t> <i> <m> <e> <s> : "𒀯"   # CUNEIFORM SIGN AN THREE TIMES
 <Multi_key> <c> <a> <n> <p> <l> <u> <s> <n> <a> <g> <a> <o> <p> <p> <o> <s> <i> <n> <g> <a> <n> <p> <l> <u> <s> <n> <a> <g> <a> : "𒀰"   # CUNEIFORM SIGN AN PLUS NAGA OPPOSING AN PLUS NAGA
@@ -1240,3 +1234,11 @@ include "%L"
 <Multi_key> <c> <z> <a> <7> : "𒕁"   # CUNEIFORM SIGN ZA7
 <Multi_key> <c> <z> <u> <o> <v> <e> <r> <z> <u> <p> <l> <u> <s> <s> <a> <r> : "𒕂"   # CUNEIFORM SIGN ZU OVER ZU PLUS SAR
 <Multi_key> <c> <z> <u> <5> <t> <i> <m> <e> <s> <t> <h> <r> <e> <e> <d> <i> <s> <h> <t> <e> <n> <u> : "𒕃"   # CUNEIFORM SIGN ZU5 TIMES THREE DISH TENU
+<Multi_key> <c> <u> <3> : "𒅇"
+<Multi_key> <c> <d> <i> <n> <g> <i> <r> : "𒀭"   # CUNEIFORM SIGN AN
+<Multi_key> <g> <u> : "𒈬" # .GU
+<Multi_key> <d> <u> <g> <4> : "𒅗" # DUG4
+<Multi_key> <m> <i> <2> : "𒊩" # mi2
+<Multi_key> <c> <e> <m> <e> <g> <i> <r> : "𒅴𒂠 " # EMEGIR
+<Multi_key> <c> <t> <f> <u> <c> <k> <i> <t> : "𒊩𒅗𒁉𒉡" # Fuck it = foda-se
+<Multi_key> <c> <k> <e> <n> <g> <i> <r> : "𒆠𒂗𒄀" # KENGIR
